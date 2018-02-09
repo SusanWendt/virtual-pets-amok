@@ -30,8 +30,8 @@ public class OrganicPet extends VirtualPet {
 	
 	@Override
 	public String toString() {
-		return "" + name + ", " + description + ", " + hunger + ", " + thirst + ", " + bathroom + ", "
-				+ energy + ", " + getStatus();
+		return "name: " + name + "| description: " + description + "| hunger: " + hunger + "| thirst: " + thirst + "| bathroom: " + bathroom + "| energy:"
+				+ energy + "| health: " + health();
 	}
 
 	// getters for constructor 1
@@ -77,7 +77,7 @@ public class OrganicPet extends VirtualPet {
 	}
 
 	@Override
-	public String getStatus() {
+	public String health() {
 		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50) {
 			return "dead";
 		}

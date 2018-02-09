@@ -36,7 +36,7 @@ public class OrganicPetTest {
 	@Test
 	public void shouldGetStatus() {
 		OrganicPet underTest = new OrganicPet("name", "description", 0, 0, 0, 0);
-		String status = underTest.getStatus();
+		String status = underTest.health();
 		assertEquals("Amazing", status);
 	}
 
@@ -44,7 +44,7 @@ public class OrganicPetTest {
 	public void shouldShowVirtualPet() {
 		OrganicPet underTest = new OrganicPet("name", "description", 0, 0, 0, 0);
 		String asString = underTest.toString();
-		assertEquals("name, description, 0, 0, 0, 0, Amazing", asString);
+		assertEquals("name: name| description: description| hunger: 0| thirst: 0| bathroom: 0| energy:0| health: Amazing", asString);
 	}
 
 	@Test
@@ -82,40 +82,40 @@ public class OrganicPetTest {
 	@Test
 	public void shouldDetermineStatusAmazing() {
 		OrganicPet underTest = new OrganicPet("name", "description", 0, 0, 0, 0);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("Amazing", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusGreat() {
 		OrganicPet underTest = new OrganicPet("name", "description", 10, 10, 10, 10);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("Great", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusGood() {
 		OrganicPet underTest = new OrganicPet("name", "description", 20, 20, 20, 20);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("Good", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusContent() {
 		OrganicPet underTest = new OrganicPet("name", "description", 30, 30, 30, 30);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("Content", status);
 	}
 
 	@Test
 	public void shouldDetermineStatusOkay() {
 		OrganicPet underTest = new OrganicPet("name", "description", 40, 40, 40, 40);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("Okay", status);
 
 	}
@@ -123,16 +123,16 @@ public class OrganicPetTest {
 	@Test
 	public void shouldDetermineStatusBad() {
 		OrganicPet underTest = new OrganicPet("name", "description", 45, 45, 45, 45);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("Bad", status);
 	}
 
 	@Test
 	public void shouldDetermineStatus() {
 		OrganicPet underTest = new OrganicPet("name", "description", 50, 50, 50, 50);
-		underTest.getStatus();
-		String status = underTest.getStatus();
+		underTest.health();
+		String status = underTest.health();
 		assertEquals("dead", status);
 	}
 

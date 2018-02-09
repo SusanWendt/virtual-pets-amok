@@ -11,46 +11,19 @@ public class VirtualPetShelterApp {
 
 		// welcome message
 		System.out.println("Welcome to BitBuddies Bed and Breakfast, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
-		// default VirtualPets options
-		System.out.println("Please select a theme for your pet inventory: ");
-		System.out.println("1) Bikini Bottom");
-		System.out.println("2) Dogs");
-		System.out.println("3) Disney");
-		String themeChosen = input.nextLine();
 
-		if (themeChosen.equals("1")) {
-			myShelter.addPet(new VirtualPet("Bob", "sea sponge", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Patrick", "just a star", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("MrCrabs", "stressed", 25, 25, 25, 25));
-		}
-		if (themeChosen.equals("2")) {
-			myShelter.addPet(new VirtualPet("Lassie", "Smart Collie", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Fido", "Loyal Dog", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Cujo", "Nightmare", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Snoopy", "Cartoon", 25, 25, 25, 25));
-		}
-		if (themeChosen.equals("3")) {
-			myShelter.addPet(new VirtualPet("Mickey", "the Mouse", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Minnie", "also Mouse", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Donald", "the Duck", 25, 25, 25, 25));
-			myShelter.addPet(new VirtualPet("Pluto", "the Dog", 25, 25, 25, 25));
-		}
-
+		// Default pet inventory:
+		myShelter.addPet(new Cat("Tom", "Cat", 25, 25, 25, 25));
+		myShelter.addPet(new Dog("Lassie", "Dog", 25, 25, 25, 25, 25));
+		myShelter.addPet(new RoboticPet("R2-D2", "Robot", 25));
+		myShelter.addPet(new RoboDog("RoboDog", "Robot Dog", 25, 25));
+		
 		// game loop
 		String option = "";
 		while (!option.equals("quit")) {
 			// pets displayed
 			System.out.println("Your Virtual Pet inventory:");
-			System.out.print("\tname\t");
-			System.out.print("| description \t\t");
-			System.out.print("| hunger \t");
-			System.out.print("| thirst \t");
-			System.out.print("| bathroom \t");
-			System.out.print("| energy \t");
-			System.out.print("| status \t");
-			System.out.println();
-			System.out.println(
-					"----------------|-----------------------|---------------|---------------|---------------|---------------|---------------");
+			System.out.println("--------------------------------------------------");
 			myShelter.showPets();
 			System.out.println();
 
@@ -60,8 +33,8 @@ public class VirtualPetShelterApp {
 			System.out.println("2) Water all the pets.");
 			System.out.println("3) Let out all the pets to go to the bathroom .");
 			System.out.println("4) Playtime for all of the pets.");
-			System.out.println("5) Play with just one pet.");
-			System.out.println("6) Choose a pet to be adopted by a loving family.");
+			System.out.println("5) Walk all of the dogs.");
+			System.out.println("6) Oil all robots.");
 			System.out.println("7) Invite a new pet to BitBuddies Bed and Breakfast.");
 			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
@@ -84,23 +57,19 @@ public class VirtualPetShelterApp {
 				System.out.println("You have chosen to play with all the pets.");
 			}
 			if (option.equals("5")) {
-				System.out.println("Which pet would you like to play with? Type name:");
-				String petChosen = input.nextLine();
-				myShelter.playWithPetByName(petChosen);
-				System.out.println("You have chosen to play with " + petChosen);
+				myShelter.walkAllDogs();
+				System.out.println("You have chosen to walk all of the dogs.");
 			}
 			if (option.equals("6")) {
-				System.out.println("Which pet would you like to be adopted? Type name:");
-				String petChosen = input.nextLine();
-				myShelter.adoptPet(petChosen);
-				System.out.println("You have chosen to send " + petChosen + " to a forever home. (Leaving BitBuddies)");
+				myShelter.oilAllRoboticPets();
+				System.out.println("You have chosen to oil all pets.)");
 			}
 			if (option.equals("7")) {
 				System.out.println("Please enter the name of the pet you would like to add:");
 				String petName = input.nextLine();
 				System.out.println("Please enter a brief description of the pet you would like to admit:");
 				String petDescription = input.nextLine();
-				myShelter.addPet(new VirtualPet(petName, petDescription));
+				myShelter.addPet(new OrganicPet(petName, petDescription, 0, 0, 0, 0));
 				System.out.println("You have added " + petName + " the " + petDescription + " to BitBuddies.");
 			}
 			if (option.equalsIgnoreCase("Quit")) {

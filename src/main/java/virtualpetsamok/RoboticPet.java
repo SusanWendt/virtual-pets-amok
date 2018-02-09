@@ -2,15 +2,19 @@ package virtualpetsamok;
 
 public class RoboticPet extends VirtualPet {
 	// instance data
-	private int rust;
+	protected int rust;
 
 	// new constructor
 	public RoboticPet(String name, String description, int rust) {
 		super(name, description);
 		this.rust = rust;
 	}
+	@Override
+	public String toString() {
+		return "name: " + name + "| description: " + description + "| rust: " + rust + "| health: " + health();
+	}
 	
-	// accessor aka getters for constructor 1
+	// getters for constructor 1
 	public int getRust() {
 		return rust;
 	}
@@ -23,12 +27,30 @@ public class RoboticPet extends VirtualPet {
 	//overridden methods 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub		
+		rust += 5;
 	}
 
 	@Override
-	public String getStatus() {
-		return health;
+	public String health() {
+		if (rust >= 50 ) {
+			return "critical oil need reached";
+		}
+		if (rust >= 40 ) {
+			return "really really needs oil";
+		}
+		if (rust >= 30 ) {
+			return "really needs oil";
+		}
+		if (rust >= 20 ) {
+			return "kinda needs oil";
+		}
+		if (rust >= 10 ) {
+			return "oil would be nice";
+		}
+		if (rust > 0 ) {
+			return "oil is a treat";
+		}
+		return "oil full";
 	}
 
 }

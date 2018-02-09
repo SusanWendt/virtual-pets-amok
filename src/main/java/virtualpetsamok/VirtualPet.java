@@ -2,10 +2,7 @@ package virtualpetsamok;
 
 public abstract class VirtualPet {
 
-	//instance data
-	protected String health;  
-	
-	// private String status;
+	// protected String status for abstract class;
 	protected String name;
 	protected String description;
 
@@ -26,10 +23,10 @@ public abstract class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "" + name + ", " + description;
+		return "" + name + "| " + description;
 	}
 
-	public abstract String getStatus();
+	public abstract String health();
 
 	public abstract void tick();
 }

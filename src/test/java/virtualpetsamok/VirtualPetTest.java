@@ -9,14 +9,14 @@ public class VirtualPetTest {
 	public void shouldShowRoboticPet() {
 		VirtualPet underTest = new RoboticPet("name", "description", 0);
 		String asString = underTest.toString();
-		assertEquals("name, description", asString);
+		assertEquals("name: name| description: description| rust: 0| health: oil full", asString);
 	}
 	
 	@Test
 	public void shouldShowOrganicPet() {
 		VirtualPet underTest = new OrganicPet("name", "description", 0, 0, 0, 0);
 		String asString = underTest.toString();
-		assertEquals("name, description, 0, 0, 0, 0, Amazing", asString);
+		assertEquals("name: name| description: description| hunger: 0| thirst: 0| bathroom: 0| energy:0| health: Amazing", asString);
 	}
 }
 
