@@ -3,20 +3,14 @@ package virtualpetsamok;
 public class OrganicPet extends VirtualPet {
 
 	// instance data
-	private int hunger;
-	private int thirst;
-	private int bathroom;
-	private int energy;
+	protected int hunger;
+	protected int thirst;
+	protected int bathroom;
+	protected int energy;
 
-	public OrganicPet(String name, String description) {
-		super(name, description);
-		this.hunger = 25;
-		this.thirst = 25;
-		this.bathroom = 25;
-		this.energy = 25;
-		
 	// constructor 1
 	public OrganicPet(String name, String description, int hunger, int thirst, int bathroom, int energy) {
+		super(name, description);
 		this.name = name;
 		this.description = description;
 		this.hunger = hunger;
@@ -25,13 +19,22 @@ public class OrganicPet extends VirtualPet {
 		this.energy = energy;
 	}
 
+//	// constructor 2
+//	public OrganicPet(String name, String description) {
+//		super(name, description);
+//		this.hunger = 25;
+//		this.thirst = 25;
+//		this.bathroom = 25;
+//		this.energy = 25;
+//	}
+	
 	@Override
 	public String toString() {
-		return "" + name + "\t\t|" + description + "\t\t|" + hunger + "\t\t|" + thirst + "\t\t|" + bathroom + "\t\t|"
-				+ energy + "\t\t|" + getStatus();
+		return "" + name + ", " + description + ", " + hunger + ", " + thirst + ", " + bathroom + ", "
+				+ energy + ", " + getStatus();
 	}
 
-	// accessor aka getters for constructor 1
+	// getters for constructor 1
 	public int getHunger() {
 		return hunger;
 	}
