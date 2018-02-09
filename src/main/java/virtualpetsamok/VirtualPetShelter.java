@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class VirtualPetShelter {
+
 	private Map<String, VirtualPet> pets = new HashMap<>();
 
 	public void addPet(VirtualPet pet) {
@@ -60,13 +61,20 @@ public class VirtualPetShelter {
 
 	public void letOutAllPets() {
 		for (VirtualPet pet : pets()) {
-			((OrganicPet) pet).letOut(10);
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).letOut(10);
+				if (pet instanceof Cat) {
+					((Cat) pet).incrLitterLevel(10);
+				}
+			}
 		}
 	}
 
 	public void playWithAllPets() {
 		for (VirtualPet pet : pets()) {
-			((OrganicPet) pet).play(10);
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).play(10);
+			}
 		}
 	}
 
@@ -82,6 +90,14 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof RoboticPet) {
 				((RoboticPet) pet).oil(10);
+			}
+		}
+	}
+
+	public void cleanCatLitterBox(int i) {
+		for (VirtualPet pet : pets()) {
+			if (pet instanceof Cat) {
+				((Cat) pet).cleanCatLitterBox(10);
 			}
 		}
 	}

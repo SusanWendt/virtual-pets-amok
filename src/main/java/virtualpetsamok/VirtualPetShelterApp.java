@@ -13,7 +13,7 @@ public class VirtualPetShelterApp {
 		System.out.println("Welcome to BitBuddies Bed and Breakfast, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
 
 		// Default pet inventory:
-		myShelter.addPet(new Cat("Tom", "Cat", 25, 25, 25, 25));
+		myShelter.addPet(new Cat("Tom", "Cat", 25, 25, 25, 25, 50));
 		myShelter.addPet(new Dog("Lassie", "Dog", 25, 25, 25, 25, 25));
 		myShelter.addPet(new RoboticPet("R2-D2", "Robot", 25));
 		myShelter.addPet(new RoboDog("RoboDog", "Robot Dog", 25, 25));
@@ -31,11 +31,12 @@ public class VirtualPetShelterApp {
 			System.out.println("What would you like to do?");
 			System.out.println("1) Feed all the pets.");
 			System.out.println("2) Water all the pets.");
-			System.out.println("3) Let out all the pets to go to the bathroom .");
+			System.out.println("3) Let out all of the organic pets to go to the bathroom .");
 			System.out.println("4) Playtime for all of the pets.");
 			System.out.println("5) Walk all of the dogs.");
 			System.out.println("6) Oil all robots.");
-			System.out.println("7) Invite a new pet to BitBuddies Bed and Breakfast.");
+			System.out.println("7) Clean cats' litterbox.");
+			System.out.println("8) Clean all dogs cages.");
 			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
 
@@ -65,13 +66,13 @@ public class VirtualPetShelterApp {
 				System.out.println("You have chosen to oil all pets.)");
 			}
 			if (option.equals("7")) {
-				System.out.println("Please enter the name of the pet you would like to add:");
-				String petName = input.nextLine();
-				System.out.println("Please enter a brief description of the pet you would like to admit:");
-				String petDescription = input.nextLine();
-				myShelter.addPet(new OrganicPet(petName, petDescription, 0, 0, 0, 0));
-				System.out.println("You have added " + petName + " the " + petDescription + " to BitBuddies.");
+				myShelter.cleanCatLitterBox(10);
+				System.out.println("You have cleaned the cats' litterbox.");
 			}
+//			if (option.equals("8")) {
+//				myShelter.cleanDogsCages());
+//				System.out.println("You have cleaned the dog's cages.");
+//			}
 			if (option.equalsIgnoreCase("Quit")) {
 				System.out.println("Goodbye!");
 				input.close();
