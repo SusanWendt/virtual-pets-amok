@@ -8,6 +8,7 @@ public class VirtualPetShelterApp {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPetShelter myShelter = new VirtualPetShelter();
+		LitterBox shelterLitterBox = new LitterBox(50);
 
 		// welcome message
 		System.out.println("Welcome to BitBuddies: Robo&Real, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
@@ -26,6 +27,7 @@ public class VirtualPetShelterApp {
 			System.out.println();
 			System.out.println("Your Virtual Pet inventory:");
 			myShelter.showPets();
+			System.out.println(shelterLitterBox);
 			System.out.println();
 
 			// game menu
@@ -72,6 +74,7 @@ public class VirtualPetShelterApp {
 			}
 			if (option.equals("7")) {
 				myShelter.cleanCatLitterBox();
+				shelterLitterBox.cleanLitterBox();
 				System.out.println("You have cleaned the organic cats' litterbox.");
 			}
 			if (option.equals("8")) {
