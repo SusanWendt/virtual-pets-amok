@@ -4,16 +4,18 @@ public abstract class RoboticPet extends VirtualPet {
 
 	// instance data
 	protected int rust;
+	protected int battery;
 
 	// new constructor
-	public RoboticPet(String name, String description, int rust) {
+	public RoboticPet(String name, String description, int rust, int battery) {
 		super(name, description);
 		this.rust = rust;
+		this.battery = battery;
 	}
 
 	@Override
 	public String toString() {
-		return name + "| " + description + "| " + happiness() + " | Health: " + health() + "|| Rust: " + rust ;
+		return name + "\t| " + description + "\t| " + happiness() + " | Health: " + health() + "|| Rust: " + rust + "| Battery: " + battery ;
 	}
 
 	// getters for constructor 1
@@ -35,7 +37,7 @@ public abstract class RoboticPet extends VirtualPet {
 	@Override
 	public String health() {
 		if (rust >= 50) {
-			return "critical oil level reached";
+			return "critical oil level reached\t";
 		}
 		if (rust >= 40) {
 			return "really really needs oil \t";
@@ -53,5 +55,10 @@ public abstract class RoboticPet extends VirtualPet {
 			return "oil is a treat \t\t";
 		}
 		return "oil full \t\t\t";
+	}
+
+	@Override
+	public void play(int amountToPlay) {
+		battery -= amountToPlay;		
 	}
 }

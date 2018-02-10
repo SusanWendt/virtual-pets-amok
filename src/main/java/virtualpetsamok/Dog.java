@@ -15,7 +15,7 @@ public class Dog extends OrganicPet implements Walkable {
 
 	@Override
 	public String toString() {
-		return name + "| " + description + "| " + happiness() + " | Health: "
+		return name + "\t\t| " + description + "\t\t| " + happiness() + " | Health: "
 				+ health() + "|| Hunger: " + hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Energy:"
 				+ energy + "\t|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
 	}
@@ -53,7 +53,7 @@ public class Dog extends OrganicPet implements Walkable {
 			return "Dead \t\t\t";
 		}
 		if (hunger > 40 && thirst > 40 && bathroom > 40 && energy > 40 && cageLevel > 40) {
-			return "Bad \t\t\t";
+			return "Bad \t\t\t\t";
 		}
 		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30 && cageLevel > 30) {
 			return "Okay \t\t\t";

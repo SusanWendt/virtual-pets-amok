@@ -60,7 +60,7 @@ public class VirtualPetShelter {
 
 	public void playWithPetByName(String name) {
 		VirtualPet playWithPet = getPetByName(name);
-		((OrganicPet) playWithPet).play(15);
+		playWithPet.play(5);
 	}
 
 	public void letOutAllPets() {

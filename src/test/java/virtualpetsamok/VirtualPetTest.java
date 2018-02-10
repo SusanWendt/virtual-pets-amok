@@ -7,7 +7,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldShowRoboticPet() {
-		VirtualPet underTest = new RoboCat("name", "description", 0);
+		VirtualPet underTest = new RoboCat("name", "description", 0, 0);
 		String asString = underTest.toString();
 		assertEquals("name: name| description: description| rust: 0| health: oil full", asString);
 	}

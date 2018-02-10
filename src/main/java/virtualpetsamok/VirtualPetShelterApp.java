@@ -14,10 +14,10 @@ public class VirtualPetShelterApp {
 		System.out.println("Some pets will be organic... some pets will be robotic!");
 
 		// Default pet inventory:
-		myShelter.addPet(new Cat("Tom \t\t", "Cat \t\t", 0, 0, 0, 0, 0));
-		myShelter.addPet(new Dog("Lassie \t\t", "Dog \t\t", 5, 5, 5, 5, 5, 5));
-		myShelter.addPet(new RoboCat("Garfield \t", "RoboCat \t", 10));
-		myShelter.addPet(new RoboDog("Pippy \t\t", "RoboDog \t", 40, 40));
+		myShelter.addPet(new Cat("Tom", "Cat", 0, 0, 0, 0, 0));
+		myShelter.addPet(new Dog("Lassie", "Dog", 5, 5, 5, 5, 5, 5));
+		myShelter.addPet(new RoboCat("Garfield", "RoboCat", 10, 10));
+		myShelter.addPet(new RoboDog("Pippy", "RoboDog", 40, 40, 40));
 
 		// game loop
 		String option = "";
@@ -38,9 +38,9 @@ public class VirtualPetShelterApp {
 			System.out.println("6) Oil all robots.");
 			System.out.println("7) Clean (organic) cats' litterbox.");
 			System.out.println("8) Clean all (organic) dogs cages.");
-//			System.out.println("9) Play with just one pet.");
+			System.out.println("9) Play with just one pet.");
 			System.out.println("10) Choose a pet to be adopted by a loving family.");
-//			System.out.println("11) Invite a new pet to BitBuddies Bed and Breakfast.");
+			System.out.println("11) Invite a new pet to BitBuddies.");
 			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
 			System.out.println();
@@ -78,26 +78,41 @@ public class VirtualPetShelterApp {
 				myShelter.cleanAllDogsCages();
 				System.out.println("You have cleaned the organic dog's cages.");
 			}
-//			if (option.equals("9")) {
-//				System.out.println("Which pet would you like to play with? Type name:");
-//				String petChosen = input.nextLine();
-//				myShelter.playWithPetByName(petChosen);
-//				System.out.println("You have chosen to play with " + petChosen);
-//			}
+			if (option.equals("9")) {
+				System.out.println("Which pet would you like to play with? Type name:");
+				String petChosen = input.nextLine();
+				myShelter.playWithPetByName(petChosen);
+				System.out.println("You have chosen to play with " + petChosen);
+			}
 			if (option.equals("10")) {
 				System.out.println("Which pet would you like to be adopted? Type name:");
 				String petChosen = input.nextLine();
 				myShelter.adoptPet(petChosen);
 				System.out.println("You have chosen to send " + petChosen + " to a forever home. (Leaving BitBuddies)");
 			}
-//			if (option.equals("11")) {
-//				System.out.println("Please enter the name of the pet you would like to add:");
-//				String petName = input.nextLine();
-//				System.out.println("Please enter a brief description of the pet you would like to admit:");
-//				String petDescription = input.nextLine();
-//				myShelter.addPet(new VirtualPet(petName, petDescription));
-//				System.out.println("You have added " + petName + " the " + petDescription + " to BitBuddies.");
-//			}
+			if (option.equals("11")) {
+				System.out.println("Please enter the name of the pet you would like to add:");
+				String petName = input.nextLine();
+				System.out.println("Please type the kind of the pet you would like to admit. Options below:");
+				System.out.println("Cat");
+				System.out.println("Dog");
+				System.out.println("RoboCat");
+				System.out.println("RoboDog");
+				String petDescription = input.nextLine();
+				if (petDescription.equals("Cat")) {
+					myShelter.addPet(new Cat (petName, petDescription, 0, 0, 0, 0, 0));
+				}
+				if (petDescription.equals("Dog")) {
+					myShelter.addPet(new Dog (petName, petDescription, 0, 0, 0, 0, 0, 0));
+				}
+				if (petDescription.equals("RoboCat")) {
+					myShelter.addPet(new RoboCat (petName, petDescription, 0, 0));
+				}
+				if (petDescription.equals("RoboDog")) {
+					myShelter.addPet(new RoboDog (petName, petDescription, 0, 0, 0));
+				}
+				System.out.println("You have added " + petName + " to BitBuddies.");
+			}
 			if (option.equalsIgnoreCase("Quit")) {
 				System.out.println("Goodbye!");
 				input.close();

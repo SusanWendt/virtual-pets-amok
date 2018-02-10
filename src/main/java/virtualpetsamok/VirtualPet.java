@@ -34,4 +34,8 @@ public abstract class VirtualPet {
 	}
 
 	public abstract void tick();
+
+	public void play(int amountToPlay) {
+		
+	}
 }

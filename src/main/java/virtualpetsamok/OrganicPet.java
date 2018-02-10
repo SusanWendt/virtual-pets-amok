@@ -49,6 +49,7 @@ public abstract class OrganicPet extends VirtualPet {
 		bathroom -= amountToLetOut;
 	}
 
+	@Override
 	public void play(int amountToPlay) {
 		energy -= amountToPlay;
 	}
