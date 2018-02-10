@@ -14,11 +14,11 @@ public class VirtualPetShelterApp {
 		System.out.println("Some pets will be organic... some pets will be robotic!");
 
 		// Default pet inventory:
-		myShelter.addPet(new Cat("Tom", "Cat", 25, 25, 25, 25, 50));
-		myShelter.addPet(new Dog("Lassie", "Dog", 25, 25, 25, 25, 25, 50));
-		myShelter.addPet(new RoboCat("R2-D2", "Robot", 25));
-		myShelter.addPet(new RoboDog("RoboDog", "Robot Dog", 25, 25));
-		
+		myShelter.addPet(new Cat("Tom \t\t", "Cat \t\t", 0, 0, 0, 0, 0));
+		myShelter.addPet(new Dog("Lassie \t\t", "Dog \t\t", 5, 5, 5, 5, 5, 5));
+		myShelter.addPet(new RoboCat("Garfield \t", "RoboCat \t", 10));
+		myShelter.addPet(new RoboDog("Pippy \t\t", "RoboDog \t", 40, 40));
+
 		// game loop
 		String option = "";
 		while (!option.equals("quit")) {
@@ -41,7 +41,7 @@ public class VirtualPetShelterApp {
 			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
 			System.out.println();
-			
+
 			if (option.equals("1")) {
 				myShelter.feedAllPets();
 				System.out.println("You have chosen to feed all of the organic pets.");

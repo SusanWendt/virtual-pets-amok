@@ -15,9 +15,9 @@ public class Dog extends OrganicPet implements Walkable {
 
 	@Override
 	public String toString() {
-		return "name: " + name + "| description: " + description + "| hunger: " + hunger + "| thirst: " + thirst
-				+ "| bathroom: " + bathroom + "| energy:" + energy + "| need to walk: " + needToWalk + "| cageLevel: "
-				+ cageLevel + "| health: " + health() + "| happiness: " + happiness();
+		return name + "| " + description + "| " + happiness() + " | Health: "
+				+ health() + "|| Hunger: " + hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Energy:"
+				+ energy + "|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
 	}
 
 	@Override
@@ -50,22 +50,22 @@ public class Dog extends OrganicPet implements Walkable {
 	@Override
 	protected String health() {
 		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50 && cageLevel >= 50) {
-			return "Dead";
+			return "Dead \t\t\t";
 		}
 		if (hunger > 40 && thirst > 40 && bathroom > 40 && energy > 40 && cageLevel > 40) {
-			return "Bad";
+			return "Bad \t\t\t";
 		}
 		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30 && cageLevel > 30) {
-			return "Okay";
+			return "Okay \t\t\t";
 		}
 		if (hunger > 20 && thirst > 20 && bathroom > 20 && energy > 20 && cageLevel > 20) {
-			return "Content";
+			return "Content \t\t\t";
 		}
 		if (hunger > 10 && thirst > 10 && bathroom > 10 && energy > 10 && cageLevel > 10) {
-			return "Good";
+			return "Good \t\t\t";
 		}
 		if (hunger > 0 && thirst > 0 && bathroom > 0 && energy > 0 && cageLevel > 0) {
-			return "Great";
+			return "Great \t\t\t";
 		}
 		return "Amazing";
 	}

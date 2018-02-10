@@ -13,7 +13,7 @@ public abstract class RoboticPet extends VirtualPet {
 
 	@Override
 	public String toString() {
-		return "name: " + name + "| description: " + description + "| rust: " + rust + "| health: " + health() + "| happiness: " + happiness();
+		return name + "| " + description + "| " + happiness() + " | Health: " + health() + "|| Rust: " + rust ;
 	}
 
 	// getters for constructor 1
@@ -38,43 +38,20 @@ public abstract class RoboticPet extends VirtualPet {
 			return "critical oil level reached";
 		}
 		if (rust >= 40) {
-			return "really really needs oil";
+			return "really really needs oil \t";
 		}
 		if (rust >= 30) {
-			return "really needs oil";
+			return "really needs oil \t\t";
 		}
 		if (rust >= 20) {
-			return "kinda needs oil";
+			return "kinda needs oil \t\t";
 		}
 		if (rust >= 10) {
-			return "oil would be nice";
+			return "oil would be nice \t\t";
 		}
 		if (rust > 0) {
-			return "oil is a treat";
+			return "oil is a treat \t\t";
 		}
-		return "oil full";
-	}
-
-	@Override
-	public String happiness() {
-		if (health().equals("critical oil level reached")) {
-			return "unhappy";
-		}
-		if (health().equals("really really needs oil")) {
-			return "unhappy";
-		}
-		if (health().equals("really needs oil")) {
-			return "unhappy";
-		}
-		if (health().equals("kinda needs oil")) {
-			return "happy";
-		}
-		if (health().equals("oil would be nice")) {
-			return "happy";
-		}
-		if (health().equals("oil is a treat")) {
-			return "happy";
-		}
-		return "HAPPY!";
+		return "oil full \t\t\t";
 	}
 }

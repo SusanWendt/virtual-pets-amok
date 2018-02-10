@@ -19,21 +19,6 @@ public abstract class OrganicPet extends VirtualPet {
 		this.energy = energy;
 	}
 
-	// // constructor 2
-	// public OrganicPet(String name, String description) {
-	// super(name, description);
-	// this.hunger = 25;
-	// this.thirst = 25;
-	// this.bathroom = 25;
-	// this.energy = 25;
-	// }
-
-	@Override
-	public String toString() {
-		return "name: " + name + "| description: " + description + "| hunger: " + hunger + "| thirst: " + thirst
-				+ "| bathroom: " + bathroom + "| energy:" + energy + "| health: " + health();
-	}
-
 	// getters for constructor 1
 	public int getHunger() {
 		return hunger;

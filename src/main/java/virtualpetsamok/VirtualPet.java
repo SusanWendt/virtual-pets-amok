@@ -21,33 +21,16 @@ public abstract class VirtualPet {
 		return description;
 	}
 
-	@Override
-	public String toString() {
-		return "" + name + "| " + description;
-	}
-
 	protected abstract String health();
 
 	public String happiness() {
-		if (health().equals("Dead")) {
-			return "unhappy";
+		if (health().equals("Dead") || health().equals("Bad") || health().equals("Okay")) {
+			return "Unhappy \t";
 		}
-		if (health().equals("Bad")) {
-			return "unhappy";
+		if (health().equals("critical oil level reached") || health().equals("really really needs oil") || (health().equals("really needs oil"))) {
+			return "Unhappy \t";
 		}
-		if (health().equals("Okay")) {
-			return "unhappy";
-		}
-		if (health().equals("Content")) {
-			return "happy";
-		}
-		if (health().equals("Good")) {
-			return "happy";
-		}
-		if (health().equals("Great")) {
-			return "happy";
-		}
-		return "HAPPY!";
+		return "Happy \t";
 	}
 
 	public abstract void tick();
