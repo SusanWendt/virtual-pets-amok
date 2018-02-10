@@ -12,7 +12,7 @@ public class RoboDog extends RoboticPet implements Walkable {
 	@Override
 	public String toString() {
 		return name + "| " + description + "| " + happiness() + " | Health: "
-				+ health() + "|| Rust: " + rust + "|| Need to walk: " + needToWalk;
+				+ health() + "|| Rust: " + rust + "\t\t\t\t\t|| Need to walk: " + needToWalk;
 	}
 
 	@Override

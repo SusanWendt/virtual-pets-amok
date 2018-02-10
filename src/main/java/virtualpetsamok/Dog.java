@@ -17,7 +17,7 @@ public class Dog extends OrganicPet implements Walkable {
 	public String toString() {
 		return name + "| " + description + "| " + happiness() + " | Health: "
 				+ health() + "|| Hunger: " + hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Energy:"
-				+ energy + "|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
+				+ energy + "\t|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
 	}
 
 	@Override

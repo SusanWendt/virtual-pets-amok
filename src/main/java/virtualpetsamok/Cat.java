@@ -11,7 +11,7 @@ public class Cat extends OrganicPet {
 	@Override
 	public String toString() {
 		return name + "| " + description + "| " + happiness() + " | Health: " + health() + "|| Hunger: " + hunger + "| Thirst: " + thirst
-				+ "| Bathroom: " + bathroom + "| Energy:" + energy + "|| Litter Box Dirtiness: " + litterLevel;
+				+ "| Bathroom: " + bathroom + "| Energy:" + energy + "\t|| Litter Box Dirtiness: " + litterLevel;
 	}
 	
 	@Override
