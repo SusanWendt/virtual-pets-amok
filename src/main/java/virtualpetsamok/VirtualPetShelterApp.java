@@ -100,16 +100,16 @@ public class VirtualPetShelterApp {
 				System.out.println("RoboDog");
 				String petDescription = input.nextLine();
 				if (petDescription.equals("Cat")) {
-					myShelter.addPet(new Cat (petName, petDescription, 0, 0, 0, 0, 0));
+					myShelter.addPet(new Cat(petName, petDescription, 0, 0, 0, 0, 0));
 				}
 				if (petDescription.equals("Dog")) {
-					myShelter.addPet(new Dog (petName, petDescription, 0, 0, 0, 0, 0, 0));
+					myShelter.addPet(new Dog(petName, petDescription, 0, 0, 0, 0, 0, 0));
 				}
 				if (petDescription.equals("RoboCat")) {
-					myShelter.addPet(new RoboCat (petName, petDescription, 0, 0));
+					myShelter.addPet(new RoboCat(petName, petDescription, 0, 0));
 				}
 				if (petDescription.equals("RoboDog")) {
-					myShelter.addPet(new RoboDog (petName, petDescription, 0, 0, 0));
+					myShelter.addPet(new RoboDog(petName, petDescription, 0, 0, 0));
 				}
 				System.out.println("You have added " + petName + " to BitBuddies.");
 			}
