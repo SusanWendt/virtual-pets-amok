@@ -11,11 +11,22 @@ public class Cat extends OrganicPet {
 	@Override
 	public String toString() {
 		return "name: " + name + "| description: " + description + "| hunger: " + hunger + "| thirst: " + thirst + "| bathroom: " + bathroom + "| energy:"
-				+ energy + "| litterlevel: " + litterLevel + "| health: " + health();
+				+ energy + "| litterlevel: " + litterLevel + "| health: " + health() + "| happiness: " + happiness();
 	}
+	
+	@Override
+	public void tick() {
+		hunger += 5;
+		thirst += 5;
+		bathroom += 5;
+		energy += 5;
+		litterLevel +=5; 
+	}
+	
 	public int getLitterLevel() {
 		return litterLevel;
 	}
+	
 	public void cleanCatLitterBox(int amountToClean) {
 		litterLevel -= amountToClean;
 	}
@@ -23,5 +34,32 @@ public class Cat extends OrganicPet {
 	public void incrLitterLevel(int i) {
 		litterLevel += 5; 
 		
+	}
+	@Override
+	public String happiness() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	protected String health() {
+		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50 && litterLevel >= 50) {
+			return "Dead";
+		}
+		if (hunger > 40 && thirst > 40 && bathroom > 40 && energy > 40 && litterLevel > 40) {
+			return "Bad";
+		}
+		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30 && litterLevel > 30) {
+			return "Okay";
+		}
+		if (hunger > 20 && thirst > 20 && bathroom > 20 && energy > 20 && litterLevel > 20) {
+			return "Content";
+		}
+		if (hunger > 10 && thirst > 10 && bathroom > 10 && energy > 10 && litterLevel > 10) {
+			return "Good";
+		}
+		if (hunger > 0 && thirst > 0 && bathroom > 0 && energy > 0 && litterLevel > 0) {
+			return "Great";
+		}
+		return "Amazing";
 	}
 }

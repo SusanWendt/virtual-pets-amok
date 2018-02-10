@@ -26,7 +26,29 @@ public abstract class VirtualPet {
 		return "" + name + "| " + description;
 	}
 
-	public abstract String health();
+	protected abstract String health();
+
+	public String happiness() {
+		if (health().equals("Dead")) {
+			return "unhappy";
+		}
+		if (health().equals("Bad")) {
+			return "unhappy";
+		}
+		if (health().equals("Okay")) {
+			return "unhappy";
+		}
+		if (health().equals("Content")) {
+			return "happy";
+		}
+		if (health().equals("Good")) {
+			return "happy";
+		}
+		if (health().equals("Great")) {
+			return "happy";
+		}
+		return "HAPPY!";
+	}
 
 	public abstract void tick();
 }

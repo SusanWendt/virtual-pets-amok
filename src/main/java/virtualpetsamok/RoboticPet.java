@@ -1,6 +1,7 @@
 package virtualpetsamok;
 
-public class RoboticPet extends VirtualPet {
+public abstract class RoboticPet extends VirtualPet {
+
 	// instance data
 	protected int rust;
 
@@ -9,22 +10,23 @@ public class RoboticPet extends VirtualPet {
 		super(name, description);
 		this.rust = rust;
 	}
+
 	@Override
 	public String toString() {
-		return "name: " + name + "| description: " + description + "| rust: " + rust + "| health: " + health();
+		return "name: " + name + "| description: " + description + "| rust: " + rust + "| health: " + health() + "| happiness: " + happiness();
 	}
-	
+
 	// getters for constructor 1
 	public int getRust() {
 		return rust;
 	}
-	
+
 	// robotic class specific methods
 	public void oil(int amountToOil) {
-		rust -= amountToOil; 
+		rust -= amountToOil;
 	}
-	
-	//overridden methods 
+
+	// overridden methods
 	@Override
 	public void tick() {
 		rust += 5;
@@ -32,25 +34,47 @@ public class RoboticPet extends VirtualPet {
 
 	@Override
 	public String health() {
-		if (rust >= 50 ) {
-			return "critical oil need reached";
+		if (rust >= 50) {
+			return "critical oil level reached";
 		}
-		if (rust >= 40 ) {
+		if (rust >= 40) {
 			return "really really needs oil";
 		}
-		if (rust >= 30 ) {
+		if (rust >= 30) {
 			return "really needs oil";
 		}
-		if (rust >= 20 ) {
+		if (rust >= 20) {
 			return "kinda needs oil";
 		}
-		if (rust >= 10 ) {
+		if (rust >= 10) {
 			return "oil would be nice";
 		}
-		if (rust > 0 ) {
+		if (rust > 0) {
 			return "oil is a treat";
 		}
 		return "oil full";
 	}
 
+	@Override
+	public String happiness() {
+		if (health().equals("critical oil level reached")) {
+			return "unhappy";
+		}
+		if (health().equals("really really needs oil")) {
+			return "unhappy";
+		}
+		if (health().equals("really needs oil")) {
+			return "unhappy";
+		}
+		if (health().equals("kinda needs oil")) {
+			return "happy";
+		}
+		if (health().equals("oil would be nice")) {
+			return "happy";
+		}
+		if (health().equals("oil is a treat")) {
+			return "happy";
+		}
+		return "HAPPY!";
+	}
 }

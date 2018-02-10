@@ -1,6 +1,7 @@
 package virtualpetsamok;
 
 public class RoboDog extends RoboticPet implements Walkable {
+	
 	private int needToWalk;
 
 	public RoboDog(String name, String description, int rust, int needToWalk) {
@@ -11,7 +12,7 @@ public class RoboDog extends RoboticPet implements Walkable {
 	@Override
 	public String toString() {
 		return "name: " + name + "| description: " + description + "| rust: " + rust + "| need to walk: " + needToWalk
-				+ "| health: " + health();
+				+ "| health: " + health() + "| happiness: " + happiness();
 	}
 
 	@Override

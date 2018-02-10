@@ -16,7 +16,7 @@ public class VirtualPetShelterApp {
 		// Default pet inventory:
 		myShelter.addPet(new Cat("Tom", "Cat", 25, 25, 25, 25, 50));
 		myShelter.addPet(new Dog("Lassie", "Dog", 25, 25, 25, 25, 25, 50));
-		myShelter.addPet(new RoboticPet("R2-D2", "Robot", 25));
+		myShelter.addPet(new RoboCat("R2-D2", "Robot", 25));
 		myShelter.addPet(new RoboDog("RoboDog", "Robot Dog", 25, 25));
 		
 		// game loop
