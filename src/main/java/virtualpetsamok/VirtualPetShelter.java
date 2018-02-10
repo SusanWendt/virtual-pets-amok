@@ -37,14 +37,18 @@ public class VirtualPetShelter {
 
 	public void feedAllPets() {
 		for (VirtualPet pet : pets()) {
-			((OrganicPet) pet).feed(10);
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).feed(10);
+			}
 		}
 	}
 
 	public void waterAllPets() {
 		for (VirtualPet pet : pets()) {
-			((OrganicPet) pet).water(10);
-			((OrganicPet) pet).letOut(-5);
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).water(10);
+				((OrganicPet) pet).letOut(-5);
+			}
 		}
 	}
 
@@ -94,10 +98,18 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void cleanCatLitterBox(int i) {
+	public void cleanCatLitterBox() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof Cat) {
 				((Cat) pet).cleanCatLitterBox(10);
+			}
+		}
+	}
+
+	public void cleanAllDogsCages() {
+		for (VirtualPet pet : pets()) {
+			if (pet instanceof Dog) {
+				((Dog) pet).cleanDogCage(10);
 			}
 		}
 	}

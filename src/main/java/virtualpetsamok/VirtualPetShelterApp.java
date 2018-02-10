@@ -14,7 +14,7 @@ public class VirtualPetShelterApp {
 
 		// Default pet inventory:
 		myShelter.addPet(new Cat("Tom", "Cat", 25, 25, 25, 25, 50));
-		myShelter.addPet(new Dog("Lassie", "Dog", 25, 25, 25, 25, 25));
+		myShelter.addPet(new Dog("Lassie", "Dog", 25, 25, 25, 25, 25, 50));
 		myShelter.addPet(new RoboticPet("R2-D2", "Robot", 25));
 		myShelter.addPet(new RoboDog("RoboDog", "Robot Dog", 25, 25));
 		
@@ -23,23 +23,24 @@ public class VirtualPetShelterApp {
 		while (!option.equals("quit")) {
 			// pets displayed
 			System.out.println("Your Virtual Pet inventory:");
-			System.out.println("--------------------------------------------------");
+			System.out.println();
 			myShelter.showPets();
 			System.out.println();
 
 			// game menu
 			System.out.println("What would you like to do?");
-			System.out.println("1) Feed all the pets.");
-			System.out.println("2) Water all the pets.");
-			System.out.println("3) Let out all of the organic pets to go to the bathroom .");
-			System.out.println("4) Playtime for all of the pets.");
-			System.out.println("5) Walk all of the dogs.");
+			System.out.println("1) Feed all the (organic) pets.");
+			System.out.println("2) Water all the (organic) pets.");
+			System.out.println("3) Let out all of the (organic) pets to go to the bathroom .");
+			System.out.println("4) Playtime for all of the (organic) pets.");
+			System.out.println("5) Walk all of the (robotic and organic) dogs.");
 			System.out.println("6) Oil all robots.");
-			System.out.println("7) Clean cats' litterbox.");
-			System.out.println("8) Clean all dogs cages.");
+			System.out.println("7) Clean (organic) cats' litterbox.");
+			System.out.println("8) Clean all (organic) dogs cages.");
 			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
-
+			System.out.println();
+			
 			if (option.equals("1")) {
 				myShelter.feedAllPets();
 				System.out.println("You have chosen to feed all the pets.");
@@ -66,13 +67,13 @@ public class VirtualPetShelterApp {
 				System.out.println("You have chosen to oil all pets.)");
 			}
 			if (option.equals("7")) {
-				myShelter.cleanCatLitterBox(10);
+				myShelter.cleanCatLitterBox();
 				System.out.println("You have cleaned the cats' litterbox.");
 			}
-//			if (option.equals("8")) {
-//				myShelter.cleanDogsCages());
-//				System.out.println("You have cleaned the dog's cages.");
-//			}
+			if (option.equals("8")) {
+				myShelter.cleanAllDogsCages();
+				System.out.println("You have cleaned the dog's cages.");
+			}
 			if (option.equalsIgnoreCase("Quit")) {
 				System.out.println("Goodbye!");
 				input.close();
