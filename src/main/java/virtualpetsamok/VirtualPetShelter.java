@@ -7,6 +7,8 @@ import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
+	LitterBox shelterLitterBox = new LitterBox(20);
+
 	private Map<String, VirtualPet> pets = new HashMap<>();
 
 	public void addPet(VirtualPet pet) {
@@ -64,12 +66,10 @@ public class VirtualPetShelter {
 	}
 
 	public void letOutAllPets() {
+		shelterLitterBox.soilLitterBox();
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
 				((OrganicPet) pet).letOut(10);
-				if (pet instanceof Cat) {
-					((Cat) pet).incrLitterLevel(10);
-				}
 			}
 		}
 	}
@@ -98,19 +98,19 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void cleanCatLitterBox() {
-		for (VirtualPet pet : pets()) {
-			if (pet instanceof Cat) {
-				((Cat) pet).cleanCatLitterBox(10);
-			}
-		}
-	}
-
 	public void cleanAllDogsCages() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof Dog) {
 				((Dog) pet).cleanDogCage(10);
 			}
 		}
+	}
+
+	public void cleanLitterBox() {
+		shelterLitterBox.cleanLitterBox();
+	}
+
+	public void showLitterBox() {
+		System.out.println("Litter Box: " + shelterLitterBox.getSoilLevel());
 	}
 }

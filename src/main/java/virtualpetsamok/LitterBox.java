@@ -20,9 +20,9 @@ public class LitterBox {
 		soilLevel += 1; 
 	}
 	
-	@Override
-	public String toString() {
-		return "LitterBox: " + soilLevel; 
-	}
+//	@Override
+//	public String toString() {
+//		return "LitterBox: " + soilLevel; 
+//	}
 
 }

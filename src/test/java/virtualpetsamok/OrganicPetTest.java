@@ -21,28 +21,28 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldGetBathroom() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 1, 0, 0);
+		OrganicPet underTest = new Cat("name", "description", 0, 0, 1, 0);
 		int bathroom = underTest.getBathroom();
 		assertEquals(1, bathroom);
 	}
 
 	@Test
 	public void shouldGetEnergy() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 1, 0);
+		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 1);
 		int energy = underTest.getEnergy();
 		assertEquals(1, energy);
 	}
 
 	@Test
 	public void shouldGetStatus() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 0, 0);
+		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 0);
 		String status = underTest.health();
 		assertEquals("Amazing 			", status);
 	}
 
 	@Test
 	public void shouldDecreaseHungerBy10() {
-		OrganicPet underTest = new Cat("name", "description", 10, 0, 0, 0, 0);
+		OrganicPet underTest = new Cat("name", "description", 10, 0, 0, 0);
 		underTest.feed(10);
 		int hunger = underTest.getHunger();
 		assertEquals(0, hunger);
@@ -50,7 +50,7 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldDecreaseThirstBy10() {
-		OrganicPet underTest = new Cat("name", "description", 0, 10, 0, 0, 0);
+		OrganicPet underTest = new Cat("name", "description", 0, 10, 0, 0);
 		underTest.water(10);
 		int thirst = underTest.getThirst();
 		assertEquals(0, thirst);
@@ -58,7 +58,7 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldDecreaseBathroomBy10() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 10, 0, 0);
+		OrganicPet underTest = new Cat("name", "description", 0, 0, 10, 0);
 		underTest.letOut(10);
 		int bathroom = underTest.getBathroom();
 		assertEquals(0, bathroom);
@@ -66,7 +66,7 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldDecreaseEnergyBy10() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 10, 0);
+		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 10);
 		underTest.play(10);
 		int energy = underTest.getEnergy();
 		assertEquals(0, energy);
@@ -90,7 +90,7 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldDetermineStatusGood() {
-		OrganicPet underTest = new Cat ("name", "description", 20, 20, 20, 20, 20);
+		OrganicPet underTest = new Cat ("name", "description", 20, 20, 20, 20);
 		underTest.health();
 		String status = underTest.health();
 		assertEquals("Good 			", status);
@@ -98,7 +98,7 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldDetermineStatusContent() {
-		OrganicPet underTest = new Cat ("name", "description", 30, 30, 30, 30, 30);
+		OrganicPet underTest = new Cat ("name", "description", 30, 30, 30, 30);
 		underTest.health();
 		String status = underTest.health();
 		assertEquals("Content 			", status);
@@ -115,7 +115,7 @@ public class OrganicPetTest {
 
 	@Test
 	public void shouldDetermineStatusBad() {
-		OrganicPet underTest = new  Cat("name", "description", 45, 45, 45, 45, 45);
+		OrganicPet underTest = new  Cat("name", "description", 45, 45, 45, 45);
 		underTest.health();
 		String status = underTest.health();
 		assertEquals("Bad 				", status);

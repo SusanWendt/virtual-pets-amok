@@ -62,12 +62,14 @@ public class VirtualPetShelterTest {
 		OrganicPet pet = new Dog (petName, "description", 0, 0, 0, 0, 0, 0);
 		underTest.addPet(pet);
 		underTest.adoptPet(petName);
-		VirtualPet retrieved = underTest.getPetByName(petName);
-		assertEquals(null, retrieved);
+		VirtualPet pet2 = new Dog("Fido", "description", 0, 0, 0, 0, 0, 0);
+		underTest.addPet(pet2);
+		int check = underTest.showPetsSize();
+		Assert.assertSame(1, check);
 	}
 
 	@Test
-	public void shouldFeedPets() {
+	public void shouldFeedAllOrganicPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
 		OrganicPet pet1 = new Dog("Lassie", "description", 10, 0, 0, 0, 0, 0);
 		underTest.addPet(pet1);
@@ -79,7 +81,7 @@ public class VirtualPetShelterTest {
 	}
 
 	@Test
-	public void shouldWaterAllPets() {
+	public void shouldWaterAllOrganicPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
 		OrganicPet pet1 = new Dog("Pippy", "dog", 0, 14, 0, 0, 0, 0);
 		underTest.addPet(pet1);
@@ -91,7 +93,7 @@ public class VirtualPetShelterTest {
 	}
 
 	@Test
-	public void shouldLetOutAllPets() {
+	public void shouldLetOutAllOrganicPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
 		OrganicPet pet1 = new Dog("Pippy", "dog", 0, 0, 10, 0, 0, 0);
 		underTest.addPet(pet1);
@@ -103,11 +105,11 @@ public class VirtualPetShelterTest {
 	}
 
 	@Test
-	public void shouldPlayWithAllPets() {
+	public void shouldPlayWithAllOrganicPets() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		OrganicPet pet1 = new Cat("Pippy", "dog", 0, 0, 0, 10, 0);
+		OrganicPet pet1 = new Cat("Pippy", "dog", 0, 0, 0, 10);
 		underTest.addPet(pet1);
-		OrganicPet pet2 = new Cat("Fido", "puppy", 0, 0, 0, 10, 0);
+		OrganicPet pet2 = new Cat("Fido", "puppy", 0, 0, 0, 10);
 		underTest.addPet(pet2);
 		underTest.playWithAllPets();
 		assertEquals(0, pet1.getEnergy());

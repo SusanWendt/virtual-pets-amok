@@ -8,14 +8,14 @@ public class VirtualPetShelterApp {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPetShelter myShelter = new VirtualPetShelter();
-		LitterBox shelterLitterBox = new LitterBox(50);
 
 		// welcome message
 		System.out.println("Welcome to BitBuddies: Robo&Real, a SoozaPoalooza Vitrual Pet Emporium(TM) corp.");
 		System.out.println("Some pets will be organic... some pets will be robotic!");
 
 		// Default pet inventory:
-		myShelter.addPet(new Cat("Tom", "Cat", 0, 0, 0, 0, 0));
+		myShelter.addPet(new Cat("Tom", "Cat", 0, 0, 0, 0));
+		myShelter.addPet(new Cat("Seuss", "Cat", 20, 20, 20, 20));
 		myShelter.addPet(new Dog("Lassie", "Dog", 5, 5, 5, 5, 5, 5));
 		myShelter.addPet(new RoboCat("Garfield", "RoboCat", 10, 10));
 		myShelter.addPet(new RoboDog("Pippy", "RoboDog", 40, 40, 40));
@@ -27,7 +27,7 @@ public class VirtualPetShelterApp {
 			System.out.println();
 			System.out.println("Your Virtual Pet inventory:");
 			myShelter.showPets();
-			System.out.println(shelterLitterBox);
+			myShelter.showLitterBox(); 
 			System.out.println();
 
 			// game menu
@@ -73,8 +73,7 @@ public class VirtualPetShelterApp {
 				System.out.println("You have chosen to oil all of the robotic pets.)");
 			}
 			if (option.equals("7")) {
-				myShelter.cleanCatLitterBox();
-				shelterLitterBox.cleanLitterBox();
+				myShelter.cleanLitterBox();
 				System.out.println("You have cleaned the organic cats' litterbox.");
 			}
 			if (option.equals("8")) {
@@ -103,7 +102,7 @@ public class VirtualPetShelterApp {
 				System.out.println("RoboDog");
 				String petDescription = input.nextLine();
 				if (petDescription.equals("Cat")) {
-					myShelter.addPet(new Cat(petName, petDescription, 0, 0, 0, 0, 0));
+					myShelter.addPet(new Cat(petName, petDescription, 0, 0, 0, 0));
 				}
 				if (petDescription.equals("Dog")) {
 					myShelter.addPet(new Dog(petName, petDescription, 0, 0, 0, 0, 0, 0));
