@@ -14,20 +14,27 @@ public class VirtualPetShelterApp {
 		System.out.println("Some pets will be organic... some pets will be robotic!");
 
 		// Default pet inventory:
-		myShelter.addPet(new Cat("Tom", "Cat", 0, 0, 0, 0));
-		myShelter.addPet(new Cat("Seuss", "Cat", 20, 20, 20, 20));
-		myShelter.addPet(new Dog("Lassie", "Dog", 5, 5, 5, 5, 5, 5));
-		myShelter.addPet(new RoboCat("Garfield", "RoboCat", 10, 10));
-		myShelter.addPet(new RoboDog("Pippy", "RoboDog", 40, 40, 40));
+		myShelter.addPet(new Cat("Tom", "Cat"));
+		myShelter.addPet(new Cat("Seuss", "Cat"));
+		myShelter.addPet(new Dog("Lassie", "Dog"));
+		myShelter.addPet(new RoboCat("Garfield", "RoboCat"));
+		myShelter.addPet(new RoboDog("Pippy", "RoboDog"));
 
 		// game loop
 		String option = "";
 		while (!option.equals("quit")) {
+
 			// pets displayed
 			System.out.println();
 			System.out.println("Your Virtual Pet inventory:");
+			System.out.println();
+			System.out.println("Name \t\t| Description");
+			System.out.println(
+					"_________________________________________________________________________________________________________________________________________________________________________________");
 			myShelter.showPets();
-			myShelter.showLitterBox(); 
+			System.out.println(
+					"_________________________________________________________________________________________________________________________________________________________________________________");
+			myShelter.showLitterBox();
 			System.out.println();
 
 			// game menu
@@ -94,26 +101,38 @@ public class VirtualPetShelterApp {
 			}
 			if (option.equals("11")) {
 				System.out.println("Please enter the name of the pet you would like to add:");
-				String petName = input.nextLine();
-				System.out.println("Please type the kind of the pet you would like to admit. Options below:");
-				System.out.println("Cat");
-				System.out.println("Dog");
-				System.out.println("RoboCat");
-				System.out.println("RoboDog");
-				String petDescription = input.nextLine();
-				if (petDescription.equals("Cat")) {
-					myShelter.addPet(new Cat(petName, petDescription, 0, 0, 0, 0));
+				String newPetName = input.nextLine();
+				System.out.println("Please enter the type of the pet you would like to admit.");
+				System.out.println("1) Cat");
+				System.out.println("2) Dog");
+				System.out.println("3) RoboCat");
+				System.out.println("4) RoboDog");
+				String newPetType = input.nextLine();
+				if (newPetType.equals("1")) {
+					System.out.println("Please enter a breif description of the pet: ");
+					String newPetDescription = input.nextLine();
+					VirtualPet newPet = new Cat(newPetName, newPetDescription);
+					myShelter.addPet(newPet);
 				}
-				if (petDescription.equals("Dog")) {
-					myShelter.addPet(new Dog(petName, petDescription, 0, 0, 0, 0, 0, 0));
+				if (newPetType.equals("2")) {
+					System.out.println("Please enter a breif description of the pet: ");
+					String newPetDescription = input.nextLine();
+					VirtualPet newPet = new Dog(newPetName, newPetDescription);
+					myShelter.addPet(newPet);
 				}
-				if (petDescription.equals("RoboCat")) {
-					myShelter.addPet(new RoboCat(petName, petDescription, 0, 0));
+				if (newPetType.equals("3")) {
+					System.out.println("Please enter a breif description of the pet: ");
+					String newPetDescription = input.nextLine();
+					VirtualPet newPet = new RoboCat(newPetName, newPetDescription);
+					myShelter.addPet(newPet);
 				}
-				if (petDescription.equals("RoboDog")) {
-					myShelter.addPet(new RoboDog(petName, petDescription, 0, 0, 0));
+				if (newPetType.equals("4")) {
+					System.out.println("Please enter a breif description of the pet: ");
+					String newPetDescription = input.nextLine();
+					VirtualPet newPet = new RoboDog(newPetName, newPetDescription);
+					myShelter.addPet(newPet);
 				}
-				System.out.println("You have added " + petName + " to BitBuddies.");
+				System.out.println("You have added " + newPetName + " to BitBuddies.");
 			}
 			if (option.equalsIgnoreCase("Quit")) {
 				System.out.println("Goodbye!");

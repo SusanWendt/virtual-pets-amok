@@ -23,7 +23,7 @@ public class VirtualPetShelter {
 		return pets.values();
 	}
 
-	public void showPets() { // TODO fix to create public collection VirtualPet then return pets
+	public void showPets() {
 		for (Entry<String, VirtualPet> entry : pets.entrySet()) {
 			System.out.println(entry.getValue());
 		}
@@ -58,6 +58,11 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : pets()) {
 			pet.tick();
 		}
+		for (VirtualPet pet : pets()) {
+			if (pet instanceof Cat) {
+				shelterLitterBox.soilLitterBox();
+			}
+		}
 	}
 
 	public void playWithPetByName(String name) {
@@ -66,19 +71,20 @@ public class VirtualPetShelter {
 	}
 
 	public void letOutAllPets() {
-		shelterLitterBox.soilLitterBox();
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
 				((OrganicPet) pet).letOut(10);
+			}
+			if (pet instanceof Cat) {
+				((Cat) pet).letOut(10);
+				shelterLitterBox.soilLitterBox();
 			}
 		}
 	}
 
 	public void playWithAllPets() {
 		for (VirtualPet pet : pets()) {
-			if (pet instanceof OrganicPet) {
-				((OrganicPet) pet).play(10);
-			}
+			pet.play(5);
 		}
 	}
 

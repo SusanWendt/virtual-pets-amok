@@ -6,13 +6,7 @@ public abstract class VirtualPet {
 	protected String name;
 	protected String description;
 
-	// constructor 2
-	public VirtualPet(String name, String description) {
-		this.name = name;
-		this.description = description;
-	}
-
-	// getter for constructor2: name and description
+	// getters
 	public String getName() {
 		return name;
 	}
@@ -27,7 +21,8 @@ public abstract class VirtualPet {
 		if (health().equals("Dead") || health().equals("Bad") || health().equals("Okay")) {
 			return "Unhappy \t";
 		}
-		if (health().equals("critical oil level reached") || health().equals("really really needs oil") || (health().equals("really needs oil"))) {
+		if (health().equals("critical oil level reached") || health().equals("really really needs oil")
+				|| (health().equals("really needs oil"))) {
 			return "Unhappy \t";
 		}
 		return "Happy \t";
@@ -36,6 +31,6 @@ public abstract class VirtualPet {
 	public abstract void tick();
 
 	public void play(int amountToPlay) {
-		
+
 	}
 }

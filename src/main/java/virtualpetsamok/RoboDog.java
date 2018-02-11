@@ -5,14 +5,23 @@ public class RoboDog extends RoboticPet implements Walkable {
 	private int needToWalk;
 
 	public RoboDog(String name, String description, int rust, int battery, int needToWalk) {
-		super(name, description, rust, battery);
+		this.rust = rust;
+		this.battery = battery;
 		this.needToWalk = needToWalk;
+	}
+
+	public RoboDog(String name, String description) {
+		this.name = name;
+		this.description = description;
+		this.rust = 25;
+		this.battery = 25;
+		this.needToWalk = 25;
 	}
 
 	@Override
 	public String toString() {
 		return name + "\t\t| " + description + "\t| " + happiness() + " | Health: " + health() + "|| Rust: " + rust
-				+ "| Battery: " + battery + "\t\t\t|| Need to walk: " + needToWalk;
+				+ "| Battery: " + battery + "\t\t\t\t|| Need to walk: " + needToWalk;
 	}
 
 	@Override

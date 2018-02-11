@@ -8,18 +8,18 @@ public abstract class OrganicPet extends VirtualPet {
 	protected int bathroom;
 	protected int energy;
 
-	// constructor 1
-	public OrganicPet(String name, String description, int hunger, int thirst, int bathroom, int energy) {
-		super(name, description);
-		this.name = name;
-		this.description = description;
-		this.hunger = hunger;
-		this.thirst = thirst;
-		this.bathroom = bathroom;
-		this.energy = energy;
-	}
+//	// constructor 1
+//	public OrganicPet(String name, String description, int hunger, int thirst, int bathroom, int energy) {
+//		super(name, description);
+//		this.name = name;
+//		this.description = description;
+//		this.hunger = hunger;
+//		this.thirst = thirst;
+//		this.bathroom = bathroom;
+//		this.energy = energy;
+//	}
 
-	// getters for constructor 1
+	// getters
 	public int getHunger() {
 		return hunger;
 	}
@@ -46,7 +46,7 @@ public abstract class OrganicPet extends VirtualPet {
 	}
 
 	public void letOut(int amountToLetOut) {
-		bathroom -= amountToLetOut;
+		bathroom = 0;
 	}
 
 	@Override
@@ -56,9 +56,10 @@ public abstract class OrganicPet extends VirtualPet {
 
 	@Override
 	public void tick() {
-		hunger += 5;
-		thirst += 5;
-		bathroom += 5;
-		energy += 5;
+		int ticker = 5; 
+		hunger += ticker;
+		thirst += ticker;
+		bathroom += ticker;
+		energy += ticker;
 	}
 }

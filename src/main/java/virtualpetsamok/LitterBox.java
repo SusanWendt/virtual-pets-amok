@@ -13,16 +13,10 @@ public class LitterBox {
 	}
 
 	public void cleanLitterBox() {
-		soilLevel = 0; 
+		soilLevel = 0;
 	}
 
 	public void soilLitterBox() {
-		soilLevel += 1; 
+		soilLevel += 1;
 	}
-	
-//	@Override
-//	public String toString() {
-//		return "LitterBox: " + soilLevel; 
-//	}
-
 }

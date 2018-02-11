@@ -6,19 +6,13 @@ public abstract class RoboticPet extends VirtualPet {
 	protected int rust;
 	protected int battery;
 
-	// new constructor
-	public RoboticPet(String name, String description, int rust, int battery) {
-		super(name, description);
-		this.rust = rust;
-		this.battery = battery;
-	}
-
 	@Override
 	public String toString() {
-		return name + "\t| " + description + "\t| " + happiness() + " | Health: " + health() + "|| Rust: " + rust + "| Battery: " + battery ;
+		return name + "\t| " + description + "\t| " + happiness() + " | Health: " + health() + "|| Rust: " + rust
+				+ "| Battery: " + battery;
 	}
 
-	// getters for constructor 1
+	// getters
 	public int getRust() {
 		return rust;
 	}
@@ -59,6 +53,6 @@ public abstract class RoboticPet extends VirtualPet {
 
 	@Override
 	public void play(int amountToPlay) {
-		battery -= amountToPlay;		
+		battery -= amountToPlay;
 	}
 }

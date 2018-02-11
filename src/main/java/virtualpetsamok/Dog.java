@@ -8,25 +8,33 @@ public class Dog extends OrganicPet implements Walkable {
 	// new constructor
 	public Dog(String name, String description, int hunger, int thirst, int bathroom, int energy, int needToWalk,
 			int cageLevel) {
-		super(name, description, hunger, thirst, bathroom, energy);
 		this.needToWalk = needToWalk;
 		this.cageLevel = cageLevel;
 	}
 
+	public Dog(String name, String description) {
+		this.name = name;
+		this.description = description;
+		this.hunger = 10;
+		this.thirst = 10;
+		this.bathroom = 10;
+		this.energy = 10;
+		this.needToWalk = 10;
+		this.cageLevel = 10;
+	}
+
 	@Override
 	public String toString() {
-		return name + "\t\t| " + description + "\t\t| " + happiness() + " | Health: "
-				+ health() + "|| Hunger: " + hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Energy:"
-				+ energy + "\t|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
+		return name + "\t\t| " + description + "\t\t| " + happiness() + " | Health: " + health() + "|| Hunger: "
+				+ hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Energy:" + energy
+				+ "\t|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
 	}
 
 	@Override
 	public void tick() {
-		hunger += 5;
-		thirst += 5;
-		bathroom += 5;
-		energy += 5;
-		cageLevel += 5;
+		int ticker = 5;
+		super.tick();
+		cageLevel += ticker;
 	}
 
 	@Override
@@ -44,7 +52,7 @@ public class Dog extends OrganicPet implements Walkable {
 	}
 
 	public void cleanDogCage(int amountToClean) {
-		cageLevel -= amountToClean;
+		cageLevel = 0;
 	}
 
 	@Override
