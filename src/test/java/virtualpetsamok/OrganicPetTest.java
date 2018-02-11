@@ -51,7 +51,7 @@ public class OrganicPetTest {
 	@Test
 	public void shouldDecreaseThirstBy10() {
 		OrganicPet underTest = new Cat("name", "description", 0, 10, 0, 0);
-		underTest.water(10);
+		underTest.water();
 		int thirst = underTest.getThirst();
 		assertEquals(0, thirst);
 	}
@@ -59,7 +59,7 @@ public class OrganicPetTest {
 	@Test
 	public void shouldDecreaseBathroomBy10() {
 		OrganicPet underTest = new Cat("name", "description", 0, 0, 10, 0);
-		underTest.letOut(10);
+		underTest.letOut();
 		int bathroom = underTest.getBathroom();
 		assertEquals(0, bathroom);
 	}

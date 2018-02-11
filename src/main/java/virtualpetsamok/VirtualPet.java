@@ -5,6 +5,8 @@ public abstract class VirtualPet {
 	// protected String status for abstract class;
 	protected String name;
 	protected String description;
+	protected String happiness; 
+	protected int health;
 
 	// getters
 	public String getName() {
@@ -13,6 +15,14 @@ public abstract class VirtualPet {
 
 	public String getDescription() {
 		return description;
+	}
+	
+	public int getHealth() {
+		return health;
+	}
+	
+	public String getHappiness() {
+		return happiness;
 	}
 
 	protected abstract String health();
@@ -28,7 +38,11 @@ public abstract class VirtualPet {
 		return "Happy \t";
 	}
 
-	public abstract void tick();
+	public void tick() {
+		int tickAmnt = 1; 
+		health += tickAmnt; 
+		happiness += tickAmnt;
+	}
 
 	public void play(int amountToPlay) {
 

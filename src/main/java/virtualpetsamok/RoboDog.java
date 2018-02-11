@@ -13,15 +13,21 @@ public class RoboDog extends RoboticPet implements Walkable {
 	public RoboDog(String name, String description) {
 		this.name = name;
 		this.description = description;
-		this.rust = 25;
-		this.battery = 25;
-		this.needToWalk = 25;
+		this.rust = 10;
+		this.battery = 100;
+		this.needToWalk = 10;
+	}
+
+	@Override
+	public void tick() {
+		super.tick();
+		needToWalk += 1;
 	}
 
 	@Override
 	public String toString() {
-		return name + "\t\t| " + description + "\t| " + happiness() + " | Health: " + health() + "|| Rust: " + rust
-				+ "| Battery: " + battery + "\t\t\t\t|| Need to walk: " + needToWalk;
+		return name + "\t\t| " + description + "\t| " + happiness() + " | Health: " + health() + "\t|| Rust: " + rust
+				+ "\t| Battery: " + battery + "\t\t\t\t|| Need to walk: " + needToWalk;
 	}
 
 	@Override
@@ -31,7 +37,7 @@ public class RoboDog extends RoboticPet implements Walkable {
 
 	@Override
 	public void walk(int amountToWalk) {
-		needToWalk -= amountToWalk;
+		needToWalk = -1;
 	}
 
 }

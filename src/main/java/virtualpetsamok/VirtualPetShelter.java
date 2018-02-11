@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
-	LitterBox shelterLitterBox = new LitterBox(20);
+	LitterBox shelterLitterBox = new LitterBox(10);
 
 	private Map<String, VirtualPet> pets = new HashMap<>();
 
@@ -40,7 +40,8 @@ public class VirtualPetShelter {
 	public void feedAllPets() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
-				((OrganicPet) pet).feed(10);
+				((OrganicPet) pet).feed(2);
+				((OrganicPet) pet).incrThirst();
 			}
 		}
 	}
@@ -48,8 +49,8 @@ public class VirtualPetShelter {
 	public void waterAllPets() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
-				((OrganicPet) pet).water(10);
-				((OrganicPet) pet).letOut(-5);
+				((OrganicPet) pet).water();
+				((OrganicPet) pet).incrBathroom(1);;
 			}
 		}
 	}
@@ -67,31 +68,34 @@ public class VirtualPetShelter {
 
 	public void playWithPetByName(String name) {
 		VirtualPet playWithPet = getPetByName(name);
-		playWithPet.play(5);
+		playWithPet.play(11);
 	}
 
 	public void letOutAllPets() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
-				((OrganicPet) pet).letOut(10);
+				((OrganicPet) pet).letOut();
 			}
 			if (pet instanceof Cat) {
-				((Cat) pet).letOut(10);
+				((Cat) pet).letOut();
 				shelterLitterBox.soilLitterBox();
+			}
+			if (pet instanceof Dog) {
+				((Dog) pet).incrCageLevel(); 
 			}
 		}
 	}
 
 	public void playWithAllPets() {
 		for (VirtualPet pet : pets()) {
-			pet.play(5);
+			pet.play(2);
 		}
 	}
 
 	public void walkAllDogs() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof Walkable) {
-				((Walkable) pet).walk(10);
+				((Walkable) pet).walk(2);
 			}
 		}
 	}
@@ -99,7 +103,7 @@ public class VirtualPetShelter {
 	public void oilAllRoboticPets() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof RoboticPet) {
-				((RoboticPet) pet).oil(10);
+				((RoboticPet) pet).oil();
 			}
 		}
 	}
@@ -107,7 +111,7 @@ public class VirtualPetShelter {
 	public void cleanAllDogsCages() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof Dog) {
-				((Dog) pet).cleanDogCage(10);
+				((Dog) pet).cleanDogCage();
 			}
 		}
 	}
@@ -118,5 +122,13 @@ public class VirtualPetShelter {
 
 	public void showLitterBox() {
 		System.out.println("Litter Box: " + shelterLitterBox.getSoilLevel());
+	}
+
+	public void rechargeRobotBatteries() {
+		for (VirtualPet pet : pets()) {
+			if (pet instanceof RoboticPet) {
+				((RoboticPet) pet).rechargeBattery(); 
+			}
+		}		
 	}
 }

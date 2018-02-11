@@ -28,7 +28,7 @@ public class VirtualPetShelterApp {
 			System.out.println();
 			System.out.println("Your Virtual Pet inventory:");
 			System.out.println();
-			System.out.println("Name \t\t| Description");
+			System.out.println("Name \t\t| Description \t| Happiness \t | Health \t\t\t|| Robotic or Organic Attributes ");
 			System.out.println(
 					"_________________________________________________________________________________________________________________________________________________________________________________");
 			myShelter.showPets();
@@ -39,17 +39,18 @@ public class VirtualPetShelterApp {
 
 			// game menu
 			System.out.println("What would you like to do?");
-			System.out.println("1) Feed all the (organic) pets.");
-			System.out.println("2) Water all the (organic) pets.");
-			System.out.println("3) Let out all of the (organic) pets to go to the bathroom .");
-			System.out.println("4) Playtime for all of the (organic) pets.");
-			System.out.println("5) Walk all of the (robotic and organic) dogs.");
-			System.out.println("6) Oil all robots.");
-			System.out.println("7) Clean (organic) cats' litterbox.");
-			System.out.println("8) Clean all (organic) dogs cages.");
-			System.out.println("9) Play with just one pet.");
-			System.out.println("10) Choose a pet to be adopted by a loving family.");
-			System.out.println("11) Invite a new pet to BitBuddies.");
+			System.out.println("1) Feed all (organic) pets.");
+			System.out.println("2) Water all (organic) pets.");
+			System.out.println("3) Let out all (organic) pets to go to the bathroom .");
+			System.out.println("4) Playtime for all pets.");
+			System.out.println("5) Play with just one pet.");
+			System.out.println("6) Walk all dogs (robotic and organic).");
+			System.out.println("7) Oil all robots.");
+			System.out.println("8) Recharge all robot batteries.");
+			System.out.println("9) Clean (organic) cats' litterbox.");
+			System.out.println("10) Clean all (organic) dogs cages.");
+			System.out.println("11) Choose a pet to be adopted by a loving family.");
+			System.out.println("12) Invite a new pet to BitBuddies.");
 			System.out.println("Or type 'quit' to exit game.");
 			option = input.nextLine();
 			System.out.println();
@@ -72,34 +73,38 @@ public class VirtualPetShelterApp {
 				System.out.println("You have chosen to play with all the pets.");
 			}
 			if (option.equals("5")) {
-				myShelter.walkAllDogs();
-				System.out.println("You have chosen to walk all of the organic and robotic dogs.");
-			}
-			if (option.equals("6")) {
-				myShelter.oilAllRoboticPets();
-				System.out.println("You have chosen to oil all of the robotic pets.)");
-			}
-			if (option.equals("7")) {
-				myShelter.cleanLitterBox();
-				System.out.println("You have cleaned the organic cats' litterbox.");
-			}
-			if (option.equals("8")) {
-				myShelter.cleanAllDogsCages();
-				System.out.println("You have cleaned the organic dog's cages.");
-			}
-			if (option.equals("9")) {
 				System.out.println("Which pet would you like to play with? Type name:");
 				String petChosen = input.nextLine();
 				myShelter.playWithPetByName(petChosen);
-				System.out.println("You have chosen to play with " + petChosen);
+				System.out.println("You have chosen to play with " + petChosen + ".");
+			}
+			if (option.equals("6")) {
+				myShelter.walkAllDogs();
+				System.out.println("You have chosen to walk all of the organic and robotic dogs.");
+			}
+			if (option.equals("7")) {
+				myShelter.oilAllRoboticPets();
+				System.out.println("You have chosen to oil all of the robotic pets.)");
+			}
+			if (option.equals("8")) {
+				myShelter.rechargeRobotBatteries();
+				System.out.println("You have chosen to reacharge all robot batteries.");
+			}
+			if (option.equals("9")) {
+				myShelter.cleanLitterBox();
+				System.out.println("You have cleaned the organic cats' litterbox.");
 			}
 			if (option.equals("10")) {
+				myShelter.cleanAllDogsCages();
+				System.out.println("You have cleaned the organic dog's cages.");
+			}
+			if (option.equals("11")) {
 				System.out.println("Which pet would you like to be adopted? Type name:");
 				String petChosen = input.nextLine();
 				myShelter.adoptPet(petChosen);
 				System.out.println("You have chosen to send " + petChosen + " to a forever home. (Leaving BitBuddies)");
 			}
-			if (option.equals("11")) {
+			if (option.equals("12")) {
 				System.out.println("Please enter the name of the pet you would like to add:");
 				String newPetName = input.nextLine();
 				System.out.println("Please enter the type of the pet you would like to admit.");

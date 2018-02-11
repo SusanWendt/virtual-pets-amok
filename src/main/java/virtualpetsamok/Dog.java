@@ -1,40 +1,54 @@
 package virtualpetsamok;
 
 public class Dog extends OrganicPet implements Walkable {
-	// instance data
-	private int cageLevel;
+
+	private int cagePoopLevel;
 	protected int needToWalk;
 
-	// new constructor
+	// constructor
 	public Dog(String name, String description, int hunger, int thirst, int bathroom, int energy, int needToWalk,
-			int cageLevel) {
+			int cagePoopLevel) {
 		this.needToWalk = needToWalk;
-		this.cageLevel = cageLevel;
+		this.cagePoopLevel = cagePoopLevel;
 	}
 
+	// new dog constructor
 	public Dog(String name, String description) {
 		this.name = name;
 		this.description = description;
 		this.hunger = 10;
 		this.thirst = 10;
 		this.bathroom = 10;
-		this.energy = 10;
+		this.boredom = 10;
 		this.needToWalk = 10;
-		this.cageLevel = 10;
+		this.cagePoopLevel = 10;
 	}
 
 	@Override
 	public String toString() {
-		return name + "\t\t| " + description + "\t\t| " + happiness() + " | Health: " + health() + "|| Hunger: "
-				+ hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Energy:" + energy
-				+ "\t|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cageLevel;
+		return name + "\t\t| " + description + "\t\t| " + happiness() + " | Health: " + health() + "\t\t|| Hunger: "
+				+ hunger + "| Thirst: " + thirst + "| Bathroom: " + bathroom + "| Boredom:" + boredom
+				+ "\t|| Need to Walk: " + needToWalk + "|| Cage Dirtiness: " + cagePoopLevel;
+	}
+
+	public int getCageLevel() {
+		return cagePoopLevel;
+	}
+
+	public void incrCageLevel() {
+		cagePoopLevel += 1;
+	}
+
+	public void cleanDogCage() {
+		cagePoopLevel = -1;
 	}
 
 	@Override
 	public void tick() {
-		int ticker = 5;
+		int tickAmnt = 1;
 		super.tick();
-		cageLevel += ticker;
+		cagePoopLevel += tickAmnt;
+		needToWalk += tickAmnt;
 	}
 
 	@Override
@@ -44,38 +58,29 @@ public class Dog extends OrganicPet implements Walkable {
 
 	@Override
 	public void walk(int amountToWalk) {
-		needToWalk -= amountToWalk;
-	}
-
-	public int getCageLevel() {
-		return cageLevel;
-	}
-
-	public void cleanDogCage(int amountToClean) {
-		cageLevel = 0;
+		needToWalk = -1;
 	}
 
 	@Override
 	protected String health() {
-		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && energy >= 50 && cageLevel >= 50) {
-			return "Dead \t\t\t";
+		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && boredom >= 50 && cagePoopLevel >= 50) {
+			return "Dead";
 		}
-		if (hunger > 40 && thirst > 40 && bathroom > 40 && energy > 40 && cageLevel > 40) {
-			return "Bad \t\t\t\t";
+		if (hunger > 40 && thirst > 40 && bathroom > 40 && boredom > 40 && cagePoopLevel > 40) {
+			return "Bad";
 		}
-		if (hunger > 30 && thirst > 30 && bathroom > 30 && energy > 30 && cageLevel > 30) {
-			return "Okay \t\t\t";
+		if (hunger > 30 && thirst > 30 && bathroom > 30 && boredom > 30 && cagePoopLevel > 30) {
+			return "Okay";
 		}
-		if (hunger > 20 && thirst > 20 && bathroom > 20 && energy > 20 && cageLevel > 20) {
-			return "Content \t\t\t";
+		if (hunger > 20 && thirst > 20 && bathroom > 20 && boredom > 20 && cagePoopLevel > 20) {
+			return "Content";
 		}
-		if (hunger > 10 && thirst > 10 && bathroom > 10 && energy > 10 && cageLevel > 10) {
-			return "Good \t\t\t";
+		if (hunger > 10 && thirst > 10 && bathroom > 10 && boredom > 10 && cagePoopLevel > 10) {
+			return "Good";
 		}
-		if (hunger > 0 && thirst > 0 && bathroom > 0 && energy > 0 && cageLevel > 0) {
-			return "Great \t\t\t";
+		if (hunger > 0 && thirst > 0 && bathroom > 0 && boredom > 0 && cagePoopLevel > 0) {
+			return "Great";
 		}
 		return "Amazing";
 	}
-
 }

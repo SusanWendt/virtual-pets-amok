@@ -10,7 +10,7 @@ public class RoboCat extends RoboticPet {
 	public RoboCat(String name, String description) {
 		this.name = name;
 		this.description = description;
-		this.rust = 15;
-		this.battery = 15;
+		this.rust = 10;
+		this.battery = 100;
 	}
 }

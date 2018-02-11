@@ -2,57 +2,62 @@ package virtualpetsamok;
 
 public abstract class RoboticPet extends VirtualPet {
 
-	// instance data
 	protected int rust;
 	protected int battery;
 
 	@Override
 	public String toString() {
-		return name + "\t| " + description + "\t| " + happiness() + " | Health: " + health() + "|| Rust: " + rust
-				+ "| Battery: " + battery;
+		return name + "\t| " + description + "\t| " + happiness() + " | Health: " + health() + "\t|| Rust: " + rust
+				+ "\t| Battery: " + battery;
 	}
 
-	// getters
 	public int getRust() {
 		return rust;
 	}
 
 	// robotic class specific methods
-	public void oil(int amountToOil) {
-		rust -= amountToOil;
+	public void oil() {
+		rust = -1;
+	}
+
+	public void rechargeBattery() {
+		battery = 101;
 	}
 
 	// overridden methods
 	@Override
 	public void tick() {
-		rust += 5;
+		super.tick();
+		int tickAmnt = 1;
+		rust += tickAmnt;
+		battery -= tickAmnt;
 	}
 
 	@Override
 	public String health() {
 		if (rust >= 50) {
-			return "critical oil level reached\t";
+			return "critical oil level reached";
 		}
 		if (rust >= 40) {
-			return "really really needs oil \t";
+			return "really really needs oil";
 		}
 		if (rust >= 30) {
-			return "really needs oil \t\t";
+			return "really needs oil";
 		}
 		if (rust >= 20) {
-			return "kinda needs oil \t\t";
+			return "kinda needs oil";
 		}
 		if (rust >= 10) {
-			return "oil would be nice \t\t";
+			return "oil would be nice";
 		}
 		if (rust > 0) {
-			return "oil is a treat \t\t";
+			return "oil is a treat";
 		}
-		return "oil full \t\t\t";
+		return "oil full";
 	}
 
 	@Override
 	public void play(int amountToPlay) {
-		battery -= amountToPlay;
+		battery = 1;
 	}
 }
