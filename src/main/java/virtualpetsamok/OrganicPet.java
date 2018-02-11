@@ -33,6 +33,10 @@ public abstract class OrganicPet extends VirtualPet {
 	public void water() {
 		thirst = -1;
 	}
+	
+	public void incrThirst() {
+		thirst += 1;
+	}
 
 	public void letOut() {
 		bathroom = -1;
@@ -55,9 +59,5 @@ public abstract class OrganicPet extends VirtualPet {
 		thirst += tickAmnt;
 		bathroom += tickAmnt;
 		boredom += tickAmnt;
-	}
-
-	public void incrThirst() {
-		thirst += 1;
 	}
 }
