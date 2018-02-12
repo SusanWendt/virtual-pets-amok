@@ -28,7 +28,7 @@ public class VirtualPetShelterApp {
 			System.out.println();
 			System.out.println("Your Virtual Pet inventory:");
 			System.out.println();
-			System.out.println("Name \t\t| Description \t| Happiness \t | Health \t\t\t|| Robotic or Organic Attributes ");
+			System.out.println("Name \t\t| Description \t| Happiness \t | Health \t\t|| Robotic or Organic Attributes ");
 			System.out.println(
 					"_________________________________________________________________________________________________________________________________________________________________________________");
 			myShelter.showPets();

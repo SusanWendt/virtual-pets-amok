@@ -2,11 +2,9 @@ package virtualpetsamok;
 
 public abstract class VirtualPet {
 
-	// protected String status for abstract class;
 	protected String name;
 	protected String description;
 
-	// getters
 	public String getName() {
 		return name;
 	}

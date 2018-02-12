@@ -7,7 +7,7 @@ public abstract class RoboticPet extends VirtualPet {
 
 	@Override
 	public String toString() {
-		return name + "\t| " + description + "\t| " + happiness() + " | Health: " + health() + "\t|| Rust: " + rust
+		return name + "\t| " + description + "\t| " + happiness() + "\t\t | " + health() + "\t|| Rust: " + rust
 				+ "\t| Battery: " + battery;
 	}
 
