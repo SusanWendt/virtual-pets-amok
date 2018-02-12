@@ -24,22 +24,22 @@ public class Cat extends OrganicPet {
 
 	@Override
 	protected String health() {
-		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && boredom >= 50 && shelterLitterBox.getSoilLevel() >= 50) {
+		if (hunger >= 50 && thirst >= 50 && bathroom >= 50 && boredom >= 50) {
 			return "Dead";
 		}
-		if (hunger > 40 && thirst > 40 && bathroom > 40 && boredom > 40 && shelterLitterBox.getSoilLevel() > 40) {
+		if (hunger > 40 && thirst > 40 && bathroom > 40 && boredom > 40) {
 			return "Bad";
 		}
-		if (hunger > 30 && thirst > 30 && bathroom > 30 && boredom > 30 && shelterLitterBox.getSoilLevel() > 30) {
+		if (hunger > 30 && thirst > 30 && bathroom > 30 && boredom > 30) {
 			return "Okay";
 		}
-		if (hunger > 20 && thirst > 20 && bathroom > 20 && boredom > 20 && shelterLitterBox.getSoilLevel() > 20) {
+		if (hunger > 20 && thirst > 20 && bathroom > 20 && boredom > 20) {
 			return "Content";
 		}
-		if (hunger > 10 && thirst > 10 && bathroom > 10 && boredom > 10 && shelterLitterBox.getSoilLevel() > 10) {
+		if (hunger > 10 && thirst > 10 && bathroom > 10 && boredom > 10) {
 			return "Good";
 		}
-		if (hunger > 0 && thirst > 0 && bathroom > 0 && boredom > 0 && shelterLitterBox.getSoilLevel() > 0) {
+		if (hunger > 0 && thirst > 0 && bathroom > 0 && boredom > 0) {
 			return "Great";
 		}
 		return "Amazing";

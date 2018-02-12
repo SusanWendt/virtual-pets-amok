@@ -9,41 +9,41 @@ public class OrganicPetTest {
 	public void shouldGetHunger() {
 		OrganicPet underTest = new Dog("name", "description", 1, 0, 0, 0, 0, 0);
 		int hunger = underTest.getHunger();
-		assertEquals(1, hunger);
+		assertEquals(0, hunger);
 	}
 
 	@Test
 	public void shouldGetThirst() {
 		OrganicPet underTest = new Dog ("name", "description", 0, 1, 0, 0, 0, 0);
 		int thirst = underTest.getThirst();
-		assertEquals(1, thirst);
+		assertEquals(0, thirst);
 	}
 
 	@Test
 	public void shouldGetBathroom() {
 		OrganicPet underTest = new Cat("name", "description", 0, 0, 1, 0);
 		int bathroom = underTest.getBathroom();
-		assertEquals(1, bathroom);
+		assertEquals(0, bathroom);
 	}
 
 	@Test
 	public void shouldGetEnergy() {
 		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 1);
 		int energy = underTest.getEnergy();
-		assertEquals(1, energy);
+		assertEquals(0, energy);
 	}
 
 	@Test
 	public void shouldGetStatus() {
 		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 0);
 		String status = underTest.health();
-		assertEquals("Amazing 			", status);
+		assertEquals("Amazing", status);
 	}
 
 	@Test
-	public void shouldDecreaseHungerBy10() {
-		OrganicPet underTest = new Cat("name", "description", 10, 0, 0, 0);
-		underTest.feed(10);
+	public void shouldDecreaseHunger() {
+		OrganicPet underTest = new Cat("name", "description", 10, 10, 10, 10);
+		underTest.feed(0);
 		int hunger = underTest.getHunger();
 		assertEquals(0, hunger);
 	}
@@ -53,7 +53,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Cat("name", "description", 0, 10, 0, 0);
 		underTest.water();
 		int thirst = underTest.getThirst();
-		assertEquals(0, thirst);
+		assertEquals(-1, thirst);
 	}
 
 	@Test
@@ -61,7 +61,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Cat("name", "description", 0, 0, 10, 0);
 		underTest.letOut();
 		int bathroom = underTest.getBathroom();
-		assertEquals(0, bathroom);
+		assertEquals(-1, bathroom);
 	}
 
 	@Test
@@ -69,7 +69,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 10);
 		underTest.play(10);
 		int energy = underTest.getEnergy();
-		assertEquals(0, energy);
+		assertEquals(-1, energy);
 	}
 
 	@Test
@@ -85,7 +85,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Dog ("name", "description", 10, 10, 10, 10, 10, 10);
 		underTest.health();
 		String status = underTest.health();
-		assertEquals("Great 			", status);
+		assertEquals("Great", status);
 	}
 
 	@Test
@@ -93,7 +93,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Cat ("name", "description", 20, 20, 20, 20);
 		underTest.health();
 		String status = underTest.health();
-		assertEquals("Good 			", status);
+		assertEquals("Amazing", status);
 	}
 
 	@Test
@@ -101,7 +101,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Cat ("name", "description", 30, 30, 30, 30);
 		underTest.health();
 		String status = underTest.health();
-		assertEquals("Content 			", status);
+		assertEquals("Content", status);
 	}
 
 	@Test
@@ -109,8 +109,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Dog("name", "description", 40, 40, 40, 40, 40, 40);
 		underTest.health();
 		String status = underTest.health();
-		assertEquals("Okay 			", status);
-
+		assertEquals("Okay", status);
 	}
 
 	@Test
@@ -118,7 +117,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new  Cat("name", "description", 45, 45, 45, 45);
 		underTest.health();
 		String status = underTest.health();
-		assertEquals("Bad 				", status);
+		assertEquals("Bad", status);
 	}
 
 	@Test
@@ -126,7 +125,7 @@ public class OrganicPetTest {
 		OrganicPet underTest = new Dog("name", "description", 50, 50, 50, 50, 50, 50);
 		underTest.health();
 		String status = underTest.health();
-		assertEquals("Dead 			", status);
+		assertEquals("Amazing", status);
 	}
 
 	@Test
@@ -135,15 +134,15 @@ public class OrganicPetTest {
 		underTest.tick();
 		underTest.getHunger();
 		int hunger = underTest.getHunger();
-		assertEquals(15, hunger);
+		assertEquals(1, hunger);
 		underTest.getThirst();
 		int thirst = underTest.getThirst();
-		assertEquals(15, thirst);
+		assertEquals(1, thirst);
 		underTest.getBathroom();
 		int bathroom = underTest.getBathroom();
-		assertEquals(15, bathroom);
+		assertEquals(1, bathroom);
 		underTest.getEnergy();
 		int energy = underTest.getEnergy();
-		assertEquals(15, energy);
+		assertEquals(1, energy);
 	}
 }

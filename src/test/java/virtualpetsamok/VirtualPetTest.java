@@ -9,7 +9,7 @@ public class VirtualPetTest {
 	public void shouldShowRoboticPet() {
 		VirtualPet underTest = new RoboCat("name", "description");
 		String asString = underTest.toString();
-		assertEquals("name	| description	| Happy 	 | Health: oil would be nice	|| Rust: 10	| Battery: 100", asString);
+		assertEquals("name	| description	| Happy | Health: oil would be nice	|| Rust: 10	| Battery: 100", asString);
 	}
 }
 

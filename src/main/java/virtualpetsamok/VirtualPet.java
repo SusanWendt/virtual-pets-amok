@@ -14,7 +14,7 @@ public abstract class VirtualPet {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	protected abstract String health();
 
 	public String happiness() {
@@ -32,6 +32,5 @@ public abstract class VirtualPet {
 	}
 
 	public void play(int amountToPlay) {
-
 	}
 }
