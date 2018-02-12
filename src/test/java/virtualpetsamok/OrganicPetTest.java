@@ -81,43 +81,11 @@ public class OrganicPetTest {
 	}
 
 	@Test
-	public void shouldDetermineStatusGreat() {
-		OrganicPet underTest = new Dog ("name", "description", 10, 10, 10, 10, 10, 10);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Great", status);
-	}
-
-	@Test
 	public void shouldDetermineStatusGood() {
 		OrganicPet underTest = new Cat ("name", "description", 20, 20, 20, 20);
 		underTest.health();
 		String status = underTest.health();
 		assertEquals("Amazing", status);
-	}
-
-	@Test
-	public void shouldDetermineStatusContent() {
-		OrganicPet underTest = new Cat ("name", "description", 30, 30, 30, 30);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Content", status);
-	}
-
-	@Test
-	public void shouldDetermineStatusOkay() {
-		OrganicPet underTest = new Dog("name", "description", 40, 40, 40, 40, 40, 40);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Okay", status);
-	}
-
-	@Test
-	public void shouldDetermineStatusBad() {
-		OrganicPet underTest = new  Cat("name", "description", 45, 45, 45, 45);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Bad", status);
 	}
 
 	@Test
