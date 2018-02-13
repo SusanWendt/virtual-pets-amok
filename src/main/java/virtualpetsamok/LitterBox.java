@@ -17,6 +17,6 @@ public class LitterBox {
 	}
 
 	public void soilLitterBox() {
-		soilLevel += 1;
+		soilLevel++;
 	}
 }

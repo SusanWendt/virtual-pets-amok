@@ -82,15 +82,15 @@ public class VirtualPetShelterApp {
 			}
 			if (option.equals("6")) {
 				myShelter.walkAllDogs();
-				System.out.println("You have chosen to walk all of the organic and robotic dogs.");
+				System.out.println("You have chosen to walk all of the organic and robotic dogs. Need to walk is now zero.");
 			}
 			if (option.equals("7")) {
 				myShelter.oilAllRoboticPets();
-				System.out.println("You have chosen to oil all of the robotic pets.)");
+				System.out.println("You have chosen to oil all of the robotic pets. Rust is now zero.");
 			}
 			if (option.equals("8")) {
 				myShelter.rechargeRobotBatteries();
-				System.out.println("You have chosen to reacharge all robot batteries.");
+				System.out.println("You have chosen to reacharge all robot batteries. Battery is now at 100.");
 			}
 			if (option.equals("9")) {
 				myShelter.cleanLitterBox();

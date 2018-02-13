@@ -51,7 +51,6 @@ public class VirtualPetShelter {
 			if (pet instanceof OrganicPet) {
 				((OrganicPet) pet).water();
 				((OrganicPet) pet).incrBathroom();
-				;
 			}
 		}
 	}
@@ -68,8 +67,8 @@ public class VirtualPetShelter {
 	}
 
 	public void playWithPetByName(String name) {
-		VirtualPet playWithPet = getPetByName(name);
-		playWithPet.play();
+		VirtualPet petChosen = getPetByName(name);
+		petChosen.play();
 	}
 
 	public void letOutAllPets() {
@@ -122,7 +121,7 @@ public class VirtualPetShelter {
 	}
 
 	public void showLitterBox() {
-		System.out.println("Litter Box: " + shelterLitterBox.getSoilLevel());
+		System.out.println("Litter Box dirtiness: " + shelterLitterBox.getSoilLevel());
 	}
 
 	public void rechargeRobotBatteries() {

@@ -47,7 +47,7 @@ public class VirtualPetShelterTest {
 	public void shouldAdoptPet() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
 		String petName = "Lassie";
-		OrganicPet pet1 = new Dog (petName, "description", 0, 0, 0, 0, 0, 0);
+		OrganicPet pet1 = new Dog(petName, "description", 0, 0, 0, 0, 0, 0);
 		underTest.addPet(pet1);
 		OrganicPet pet2 = new Cat("Cat", "cat", 0, 10, 0, 0);
 		underTest.addPet(pet2);
@@ -61,7 +61,7 @@ public class VirtualPetShelterTest {
 		VirtualPetShelter underTest = new VirtualPetShelter();
 		OrganicPet pet1 = new Dog("Lassie", "description", 10, 0, 0, 0, 0, 0);
 		underTest.addPet(pet1);
-		OrganicPet pet2 = new Cat("Cat", "cat", 0, 10, 0, 0);		
+		OrganicPet pet2 = new Cat("Cat", "cat", 0, 10, 0, 0);
 		underTest.addPet(pet2);
 		underTest.feedAllPets();
 		assertEquals(0, pet1.getHunger());
@@ -126,6 +126,34 @@ public class VirtualPetShelterTest {
 		underTest.playWithPetByName("Dog");
 		assertEquals(0, pet1.getEnergy());
 		assertEquals(10, pet2.getEnergy());
+	}
+
+	@Test
+	public void shouldInitiateShelterLitterBox() {
+		LitterBox underTest = new LitterBox(10);
+		assertNotNull(underTest);
+	}
+
+	@Test
+	public void shouldGetSoilLvlofShelterLitterBox() {
+		LitterBox underTest = new LitterBox(10);
+		int soilLevel = underTest.getSoilLevel();
+		assertEquals(10, soilLevel);
+	}
+
+	@Test
+	public void shouldCleanShelterLitterBox() {
+		LitterBox underTest = new LitterBox(10);
+		underTest.cleanLitterBox();
+		int soilLevel = underTest.getSoilLevel();
+		assertEquals(0, soilLevel);
+	}
+	@Test
+	public void shouldSoilShelterLitterBox() {
+		LitterBox underTest = new LitterBox(10);
+		underTest.soilLitterBox();
+		int soilLevel = underTest.getSoilLevel();
+		assertEquals(11, soilLevel);
 	}
 
 }

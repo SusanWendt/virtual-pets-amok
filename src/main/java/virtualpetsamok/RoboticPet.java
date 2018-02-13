@@ -33,7 +33,10 @@ public abstract class RoboticPet extends VirtualPet {
 	public void tick() {
 		int tickAmnt = 1;
 		rust += tickAmnt;
-		battery -= tickAmnt;
+		if (battery > 0) {			
+			battery -= tickAmnt;
+		}
+		battery = 0; 
 	}
 
 	@Override
