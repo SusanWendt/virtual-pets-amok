@@ -36,8 +36,8 @@ public class RoboDog extends RoboticPet implements Walkable {
 	}
 
 	@Override
-	public void walk(int amountToWalk) {
-		needToWalk = -1;
+	public void walk() {
+		needToWalk = 0;
 	}
 
 }

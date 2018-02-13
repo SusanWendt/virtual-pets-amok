@@ -26,9 +26,7 @@ public abstract class VirtualPet {
 		return "Happy";
 	}
 
-	public void tick() {
-	}
+	public abstract void tick();
 
-	public void play(int amountToPlay) {
-	}
+	public abstract void play();
 }

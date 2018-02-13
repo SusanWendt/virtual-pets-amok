@@ -36,11 +36,11 @@ public class Dog extends OrganicPet implements Walkable {
 	}
 
 	public void incrCageLevel() {
-		cagePoopLevel += 1;
+		cagePoopLevel++;
 	}
 
 	public void cleanDogCage() {
-		cagePoopLevel = -1;
+		cagePoopLevel = 0;
 	}
 
 	@Override
@@ -57,8 +57,8 @@ public class Dog extends OrganicPet implements Walkable {
 	}
 
 	@Override
-	public void walk(int amountToWalk) {
-		needToWalk = -1;
+	public void walk() {
+		needToWalk = 0;
 	}
 
 	@Override

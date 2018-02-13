@@ -40,7 +40,7 @@ public class VirtualPetShelter {
 	public void feedAllPets() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
-				((OrganicPet) pet).feed(2);
+				((OrganicPet) pet).feed();
 				((OrganicPet) pet).incrThirst();
 			}
 		}
@@ -50,7 +50,8 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof OrganicPet) {
 				((OrganicPet) pet).water();
-				((OrganicPet) pet).incrBathroom(1);;
+				((OrganicPet) pet).incrBathroom();
+				;
 			}
 		}
 	}
@@ -68,7 +69,7 @@ public class VirtualPetShelter {
 
 	public void playWithPetByName(String name) {
 		VirtualPet playWithPet = getPetByName(name);
-		playWithPet.play(11);
+		playWithPet.play();
 	}
 
 	public void letOutAllPets() {
@@ -81,21 +82,21 @@ public class VirtualPetShelter {
 				shelterLitterBox.soilLitterBox();
 			}
 			if (pet instanceof Dog) {
-				((Dog) pet).incrCageLevel(); 
+				((Dog) pet).incrCageLevel();
 			}
 		}
 	}
 
 	public void playWithAllPets() {
 		for (VirtualPet pet : pets()) {
-			pet.play(2);
+			pet.play();
 		}
 	}
 
 	public void walkAllDogs() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof Walkable) {
-				((Walkable) pet).walk(2);
+				((Walkable) pet).walk();
 			}
 		}
 	}
@@ -127,8 +128,8 @@ public class VirtualPetShelter {
 	public void rechargeRobotBatteries() {
 		for (VirtualPet pet : pets()) {
 			if (pet instanceof RoboticPet) {
-				((RoboticPet) pet).rechargeBattery(); 
+				((RoboticPet) pet).rechargeBattery();
 			}
-		}		
+		}
 	}
 }

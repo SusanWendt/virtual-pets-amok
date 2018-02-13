@@ -15,19 +15,22 @@ public abstract class RoboticPet extends VirtualPet {
 		return rust;
 	}
 
+	public int getBattery() {
+		return battery;
+	}
+
 	// robotic class specific methods
 	public void oil() {
-		rust = -1;
+		rust = 0;
 	}
 
 	public void rechargeBattery() {
-		battery = 101;
+		battery = 100;
 	}
 
 	// overridden methods
 	@Override
 	public void tick() {
-		super.tick();
 		int tickAmnt = 1;
 		rust += tickAmnt;
 		battery -= tickAmnt;
@@ -57,7 +60,7 @@ public abstract class RoboticPet extends VirtualPet {
 	}
 
 	@Override
-	public void play(int amountToPlay) {
-		battery = 1;
+	public void play() {
+		battery = 0;
 	}
 }

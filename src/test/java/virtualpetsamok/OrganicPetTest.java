@@ -7,110 +7,70 @@ import org.junit.Test;
 public class OrganicPetTest {
 	@Test
 	public void shouldGetHunger() {
-		OrganicPet underTest = new Dog("name", "description", 1, 0, 0, 0, 0, 0);
+		OrganicPet underTest = new Dog("name", "description");
+		int hunger = underTest.getHunger();
+		assertEquals(10, hunger);
+	}
+
+	@Test
+	public void shouldGetThirst() {
+		OrganicPet underTest = new Dog("name", "description");
+		int thirst = underTest.getThirst();
+		assertEquals(10, thirst);
+	}
+
+	@Test
+	public void shouldGetBathroom() {
+		OrganicPet underTest = new Cat("name", "description");
+		int bathroom = underTest.getBathroom();
+		assertEquals(10, bathroom);
+	}
+
+	@Test
+	public void shouldGetEnergy() {
+		OrganicPet underTest = new Cat("name", "description");
+		int energy = underTest.getEnergy();
+		assertEquals(10, energy);
+	}
+
+	@Test
+	public void shouldGetStatus() {
+		OrganicPet underTest = new Cat("name", "description");
+		String status = underTest.health();
+		assertEquals("Great", status);
+	}
+
+	@Test
+	public void shouldDecreaseHunger() {
+		OrganicPet underTest = new Cat("name", "description");
+		underTest.feed();
 		int hunger = underTest.getHunger();
 		assertEquals(0, hunger);
 	}
 
 	@Test
-	public void shouldGetThirst() {
-		OrganicPet underTest = new Dog ("name", "description", 0, 1, 0, 0, 0, 0);
+	public void shouldDecreaseThirst() {
+		OrganicPet underTest = new Cat("name", "description");
+		underTest.water();
 		int thirst = underTest.getThirst();
 		assertEquals(0, thirst);
 	}
 
 	@Test
-	public void shouldGetBathroom() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 1, 0);
+	public void shouldDecreaseBathroom() {
+		OrganicPet underTest = new Cat("name", "description");
+		underTest.letOut();
 		int bathroom = underTest.getBathroom();
 		assertEquals(0, bathroom);
 	}
 
 	@Test
-	public void shouldGetEnergy() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 1);
+	public void shouldDecreaseEnergy() {
+		OrganicPet underTest = new Cat("name", "description");
+		underTest.play();
 		int energy = underTest.getEnergy();
 		assertEquals(0, energy);
 	}
 
-	@Test
-	public void shouldGetStatus() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 0);
-		String status = underTest.health();
-		assertEquals("Amazing", status);
-	}
 
-	@Test
-	public void shouldDecreaseHunger() {
-		OrganicPet underTest = new Cat("name", "description", 10, 10, 10, 10);
-		underTest.feed(0);
-		int hunger = underTest.getHunger();
-		assertEquals(0, hunger);
-	}
-
-	@Test
-	public void shouldDecreaseThirstBy10() {
-		OrganicPet underTest = new Cat("name", "description", 0, 10, 0, 0);
-		underTest.water();
-		int thirst = underTest.getThirst();
-		assertEquals(-1, thirst);
-	}
-
-	@Test
-	public void shouldDecreaseBathroomBy10() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 10, 0);
-		underTest.letOut();
-		int bathroom = underTest.getBathroom();
-		assertEquals(-1, bathroom);
-	}
-
-	@Test
-	public void shouldDecreaseEnergyBy10() {
-		OrganicPet underTest = new Cat("name", "description", 0, 0, 0, 10);
-		underTest.play(10);
-		int energy = underTest.getEnergy();
-		assertEquals(-1, energy);
-	}
-
-	@Test
-	public void shouldDetermineStatusAmazing() {
-		OrganicPet underTest = new Dog ("name", "description", 0, 0, 0, 0, 0, 0);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Amazing", status);
-	}
-
-	@Test
-	public void shouldDetermineStatusGood() {
-		OrganicPet underTest = new Cat ("name", "description", 20, 20, 20, 20);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Amazing", status);
-	}
-
-	@Test
-	public void shouldDetermineStatusDead() {
-		OrganicPet underTest = new Dog("name", "description", 50, 50, 50, 50, 50, 50);
-		underTest.health();
-		String status = underTest.health();
-		assertEquals("Amazing", status);
-	}
-
-	@Test
-	public void shouldTick() {
-		OrganicPet underTest = new Dog("name", "description", 10, 10, 10, 10, 0, 0);
-		underTest.tick();
-		underTest.getHunger();
-		int hunger = underTest.getHunger();
-		assertEquals(1, hunger);
-		underTest.getThirst();
-		int thirst = underTest.getThirst();
-		assertEquals(1, thirst);
-		underTest.getBathroom();
-		int bathroom = underTest.getBathroom();
-		assertEquals(1, bathroom);
-		underTest.getEnergy();
-		int energy = underTest.getEnergy();
-		assertEquals(1, energy);
-	}
 }

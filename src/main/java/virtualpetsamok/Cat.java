@@ -2,8 +2,6 @@ package virtualpetsamok;
 
 public class Cat extends OrganicPet {
 
-	LitterBox shelterLitterBox = new LitterBox(50);
-
 	public Cat(String name, String description, int hunger, int thirst, int bathroom, int energy) {
 	}
 

@@ -26,34 +26,33 @@ public abstract class OrganicPet extends VirtualPet {
 	}
 
 	// modifier Method
-	public void feed(int amountToFeed) {
-		hunger = hunger - amountToFeed;
+	public void feed() {
+		hunger = 0;
 	}
 
 	public void water() {
-		thirst = -1;
+		thirst = 0;
 	}
 
 	public void incrThirst() {
-		thirst += 1;
+		thirst++;
 	}
 
 	public void letOut() {
-		bathroom = -1;
+		bathroom = 0;
 	}
 
-	public void incrBathroom(int amountToIncr) {
-		bathroom += amountToIncr;
+	public void incrBathroom() {
+		bathroom++;
 	}
 
 	@Override
-	public void play(int amountToPlay) {
-		boredom = -1;
+	public void play() {
+		boredom = 0;
 	}
 
 	@Override
 	public void tick() {
-		super.tick();
 		int tickAmnt = 1;
 		hunger += tickAmnt;
 		thirst += tickAmnt;

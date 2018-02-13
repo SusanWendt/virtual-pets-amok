@@ -28,7 +28,8 @@ public class VirtualPetShelterApp {
 			System.out.println();
 			System.out.println("Your Virtual Pet inventory:");
 			System.out.println();
-			System.out.println("Name \t\t| Description \t| Happiness \t | Health \t\t|| Robotic or Organic Attributes ");
+			System.out
+					.println("Name \t\t| Description \t| Happiness \t | Health \t\t|| Robotic or Organic Attributes ");
 			System.out.println(
 					"_________________________________________________________________________________________________________________________________________________________________________________");
 			myShelter.showPets();
@@ -36,7 +37,8 @@ public class VirtualPetShelterApp {
 					"_________________________________________________________________________________________________________________________________________________________________________________");
 			myShelter.showLitterBox();
 			System.out.println();
-
+			// tick
+			myShelter.tickAllPets();
 			// game menu
 			System.out.println("What would you like to do?");
 			System.out.println("1) Feed all (organic) pets.");
@@ -57,7 +59,7 @@ public class VirtualPetShelterApp {
 
 			if (option.equals("1")) {
 				myShelter.feedAllPets();
-				System.out.println("You have chosen to feed all of the organic pets.");
+				System.out.println("You have chosen to feed all of the organic pets. But now thirst has increased.");
 			}
 			if (option.equals("2")) {
 				myShelter.waterAllPets();
@@ -66,11 +68,11 @@ public class VirtualPetShelterApp {
 			}
 			if (option.equals("3")) {
 				myShelter.letOutAllPets();
-				System.out.println("You have chosen to let all of the organic pets go to the bathroom.");
+				System.out.println("You have chosen to let all of the organic pets go to the bathroom. But now the cats' litterbox and dog's cages are getting dirtier.");
 			}
 			if (option.equals("4")) {
 				myShelter.playWithAllPets();
-				System.out.println("You have chosen to play with all the pets.");
+				System.out.println("You have chosen to play with all the pets. Organic pet boredom is now zero and robotic pet battery is drained. ");
 			}
 			if (option.equals("5")) {
 				System.out.println("Which pet would you like to play with? Type name:");
@@ -144,7 +146,6 @@ public class VirtualPetShelterApp {
 				input.close();
 				System.exit(0);
 			}
-			myShelter.tickAllPets();
 		}
 	}
 }
